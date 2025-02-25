@@ -24,9 +24,9 @@ const Index = () => {
             </div>
             <div className="w-full lg:w-1/2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <img
-                src={"/lovable-uploads/247a559c-60f8-44db-946b-8c546f935a07.png"}
-                alt="AI Robot"
-                className="w-full max-w-md mx-auto"
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
+                alt="Tecnologia Moderna"
+                className="w-full max-w-md mx-auto rounded-lg shadow-xl"
               />
             </div>
           </div>
