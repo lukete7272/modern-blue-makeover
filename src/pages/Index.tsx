@@ -57,13 +57,46 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* App Features Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Como a I9 Appify transforma seu negócio
+            Como a I9 Appify transforma seu negócio?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="w-full lg:w-1/2">
+              <div className="space-y-8">
+                {appFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="w-full lg:w-1/2">
+              <img
+                src="/lovable-uploads/1693d5cd-08b9-4868-8643-8f0a6d2aab52.png"
+                alt="App Interface"
+                className="w-full max-w-md mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Simple Steps Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Como Funciona em 3 Passos Simples
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
               <div
                 key={index}
@@ -78,6 +111,125 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Challenges Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Os Desafios Que Você Enfrenta no Atendimento
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {challenges.map((challenge, index) => (
+              <div
+                key={index}
+                className="p-6 bg-white rounded-xl shadow-lg animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  {challenge.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{challenge.title}</h3>
+                <p className="text-gray-600">{challenge.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compare Solutions Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            I9 Appify vs Outras Soluções
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-6 bg-primary/5 rounded-xl">
+              <h3 className="text-xl font-semibold text-primary mb-4">I9 Appify</h3>
+              <ul className="space-y-3">
+                {i9Features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="text-green-500">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-xl">
+              <h3 className="text-xl font-semibold text-gray-700 mb-4">Outras Soluções</h3>
+              <ul className="space-y-3">
+                {otherSolutions.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <span className="text-red-500">✗</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            O Que Nossos Clientes Dizem
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="p-6 bg-white rounded-xl shadow-lg animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                    <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">{testimonial.name}</h3>
+                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">{testimonial.text}</p>
+                <div className="mt-4 text-yellow-400">★★★★★</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Perguntas Frequentes
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="p-6 bg-gray-50 rounded-xl">
+                <h3 className="font-semibold mb-2">{faq.question}</h3>
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Satisfaction Guarantee */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <div className="w-24 h-24 mx-auto mb-6">
+            <img src="/guarantee-seal.png" alt="Selo de Garantia" className="w-full h-full" />
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Garantia de Satisfação
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Oferecemos 30 dias de garantia total de satisfação. Se você não estiver completamente satisfeito, devolvemos 100% do seu investimento.
+          </p>
         </div>
       </section>
 
@@ -114,6 +266,24 @@ const features = [
   },
 ];
 
+const appFeatures = [
+  {
+    icon: <span>🔄</span>,
+    title: "Automação Inteligente",
+    description: "Automatize processos repetitivos com IA avançada",
+  },
+  {
+    icon: <span>💬</span>,
+    title: "Respostas Personalizadas",
+    description: "Chatbot que aprende com cada interação",
+  },
+  {
+    icon: <span>📊</span>,
+    title: "Análise em Tempo Real",
+    description: "Métricas e insights para melhorar seu atendimento",
+  },
+];
+
 const steps = [
   {
     title: "Análise Personalizada",
@@ -126,6 +296,78 @@ const steps = [
   {
     title: "Resultados Imediatos",
     description: "Comece a ver melhorias no seu atendimento desde o primeiro dia.",
+  },
+];
+
+const challenges = [
+  {
+    icon: <span>⏰</span>,
+    title: "Tempo de Resposta",
+    description: "Clientes esperando muito tempo por respostas",
+  },
+  {
+    icon: <span>👥</span>,
+    title: "Equipe Sobrecarregada",
+    description: "Funcionários dedicados a tarefas repetitivas",
+  },
+  {
+    icon: <span>📱</span>,
+    title: "Múltiplos Canais",
+    description: "Dificuldade em gerenciar diferentes plataformas",
+  },
+];
+
+const i9Features = [
+  "Atendimento 24/7",
+  "IA Personalizada",
+  "Setup em 24h",
+  "Suporte Dedicado",
+];
+
+const otherSolutions = [
+  "Horário Limitado",
+  "IA Genérica",
+  "Setup Demorado",
+  "Suporte Básico",
+];
+
+const testimonials = [
+  {
+    name: "João Silva",
+    role: "CEO, Tech Solutions",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+    text: "A I9 Appify revolucionou nosso atendimento ao cliente. Não consigo imaginar nossa operação sem ela.",
+  },
+  {
+    name: "Maria Santos",
+    role: "Gerente de Operações",
+    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
+    text: "Reduzimos nosso tempo de resposta em 80% com a solução da I9 Appify.",
+  },
+  {
+    name: "Carlos Oliveira",
+    role: "Diretor Comercial",
+    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
+    text: "A melhor decisão que tomamos foi implementar a I9 Appify no nosso atendimento.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Quanto tempo leva para implementar?",
+    answer: "A implementação é rápida e pode ser concluída em até 24 horas após a contratação.",
+  },
+  {
+    question: "Preciso de conhecimento técnico?",
+    answer: "Não! Nossa plataforma é intuitiva e oferecemos todo o suporte necessário.",
+  },
+  {
+    question: "Como funciona o período de teste?",
+    answer: "Oferecemos 14 dias de teste gratuito com todas as funcionalidades disponíveis.",
+  },
+  {
+    question: "Posso personalizar as respostas?",
+    answer: "Sim! Você tem total controle sobre as respostas e pode personalizá-las conforme sua necessidade.",
   },
 ];
 
