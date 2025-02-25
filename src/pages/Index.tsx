@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const Index = () => {
@@ -80,11 +79,7 @@ const Index = () => {
               </div>
             </div>
             <div className="w-full lg:w-1/2">
-              <img
-                src="/lovable-uploads/1693d5cd-08b9-4868-8643-8f0a6d2aab52.png"
-                alt="App Interface"
-                className="w-full max-w-md mx-auto"
-              />
+              {/* Removida a imagem que estava aqui */}
             </div>
           </div>
         </div>
