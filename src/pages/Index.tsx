@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const Index = () => {
-  const [isLoaded, useState] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
