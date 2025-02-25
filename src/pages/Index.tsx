@@ -4,20 +4,22 @@ const Index = () => {
   const [isLoaded, setIsLoaded] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-24 overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate-fade-up">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Conecte sua empresa com{" "}
-                <span className="text-primary">inteligência</span>
+                <span className="text-primary bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                  inteligência
+                </span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Automatize seu atendimento e transforme a experiência dos seus clientes com soluções inovadoras.
               </p>
-              <button className="bg-primary text-white px-8 py-3 rounded-lg shadow-lg hover:bg-primary/90 transition duration-300">
+              <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/20 hover:scale-105 transition duration-300 text-lg font-semibold">
                 Começar agora
               </button>
             </div>
@@ -25,7 +27,7 @@ const Index = () => {
               <img
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
                 alt="Tecnologia Moderna"
-                className="w-full max-w-md mx-auto rounded-lg shadow-xl"
+                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 transform hover:scale-[1.02]"
               />
             </div>
           </div>
@@ -33,23 +35,24 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Por que seu atendimento precisa de automação?
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            Por que seu atendimento precisa de{" "}
+            <span className="text-primary">automação</span>?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-up"
+                className="p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -57,52 +60,62 @@ const Index = () => {
       </section>
 
       {/* App Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Como a I9 Appify transforma seu negócio?
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            Como a <span className="text-primary">I9 Appify</span> transforma seu negócio?
           </h2>
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
             <div className="w-full lg:w-1/2">
-              <div className="space-y-8">
+              <div className="space-y-10">
                 {appFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div 
+                    key={index} 
+                    className="flex items-start gap-6 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary text-2xl">
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                      <p className="text-gray-600">{feature.description}</p>
+                      <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="w-full lg:w-1/2">
-              {/* Removida a imagem que estava aqui */}
+            <div className="w-full lg:w-1/2 flex justify-center items-center">
+              <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-10 rounded-2xl w-full">
+                <h3 className="text-2xl font-semibold text-center text-gray-900 mb-6">
+                  Pronto para começar?
+                </h3>
+                <button className="w-full bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/20 hover:scale-105 transition duration-300 text-lg font-semibold">
+                  Agende uma demonstração
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Simple Steps Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Como Funciona em 3 Passos Simples
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            Como Funciona em <span className="text-primary">3 Passos Simples</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-xl shadow-lg animate-fade-up"
+                className="p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg animate-fade-up relative"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
                   {index + 1}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -110,7 +123,7 @@ const Index = () => {
       </section>
 
       {/* Challenges Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Os Desafios Que Você Enfrenta no Atendimento
@@ -134,7 +147,7 @@ const Index = () => {
       </section>
 
       {/* Compare Solutions Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             I9 Appify vs Outras Soluções
@@ -167,7 +180,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             O Que Nossos Clientes Dizem
@@ -197,7 +210,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Perguntas Frequentes
@@ -214,7 +227,7 @@ const Index = () => {
       </section>
 
       {/* Satisfaction Guarantee */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <div className="w-24 h-24 mx-auto mb-6">
             <img src="/guarantee-seal.png" alt="Selo de Garantia" className="w-full h-full" />
@@ -234,7 +247,7 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-white mb-8">
             Pronto para transformar seu atendimento?
           </h2>
-          <button className="bg-white text-primary px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300">
+          <button className="bg-white text-primary px-8 py-4 rounded-xl shadow-lg hover:bg-gray-100 transition duration-300">
             Agende uma demonstração
           </button>
         </div>
