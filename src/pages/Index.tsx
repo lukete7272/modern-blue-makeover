@@ -66,32 +66,33 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Como a <span className="text-primary">I9 Appify</span> transforma seu negócio?
           </h2>
-          <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
-            <div className="w-full lg:w-1/2">
-              <div className="space-y-10">
-                {appFeatures.map((feature, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-start gap-6 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                  >
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary text-2xl">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                    </div>
+          
+          {/* Reformatado para corresponder ao layout da imagem */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-10">
+              {appFeatures.map((feature, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-start gap-6 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary text-xl">
+                    {feature.icon}
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="w-full lg:w-1/2 flex justify-center items-center">
-              <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-10 rounded-2xl w-full shadow-lg">
+            
+            <div className="flex justify-center items-center">
+              <div className="bg-primary/10 p-10 rounded-2xl w-full max-w-md shadow-md">
                 <h3 className="text-2xl font-semibold text-center text-gray-900 mb-10">
                   Pronto para começar?
                 </h3>
                 <div className="flex justify-center">
-                  <button className="bg-primary text-white px-10 py-5 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-xl font-semibold">
+                  <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-md hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold">
                     Agende uma demonstração
                   </button>
                 </div>
