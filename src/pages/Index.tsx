@@ -67,34 +67,37 @@ const Index = () => {
             Como a <span className="text-primary">I9 Appify</span> transforma seu negócio?
           </h2>
           
-          {/* Reformatado para corresponder ao layout da imagem */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-10">
-              {appFeatures.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-start gap-6 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary text-xl">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                  </div>
+          <div className="mx-auto max-w-6xl">
+            <div className="flex flex-col items-center">
+              <div className="w-full max-w-3xl mb-16">
+                <div className="space-y-10">
+                  {appFeatures.map((feature, index) => (
+                    <div 
+                      key={index} 
+                      className="flex items-start gap-6 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                      <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary text-xl">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            
-            <div className="flex justify-center items-center">
-              <div className="bg-primary/10 p-10 rounded-2xl w-full max-w-md shadow-md">
-                <h3 className="text-2xl font-semibold text-center text-gray-900 mb-10">
-                  Pronto para começar?
-                </h3>
-                <div className="flex justify-center">
-                  <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-md hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold">
-                    Agende uma demonstração
-                  </button>
+              </div>
+              
+              <div className="w-full max-w-md">
+                <div className="bg-primary/10 p-10 rounded-2xl shadow-md">
+                  <h3 className="text-2xl font-semibold text-center text-gray-900 mb-10">
+                    Pronto para começar?
+                  </h3>
+                  <div className="flex justify-center">
+                    <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-md hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold">
+                      Agende uma demonstração
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,36 +182,6 @@ const Index = () => {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            O Que Nossos Clientes Dizem
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                    <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="text-gray-600">{testimonial.text}</p>
-                <div className="mt-4 text-yellow-400">★★★★★</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -347,27 +320,6 @@ const otherSolutions = [
   "IA Genérica",
   "Setup Demorado",
   "Suporte Básico",
-];
-
-const testimonials = [
-  {
-    name: "João Silva",
-    role: "CEO, Tech Solutions",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    text: "A I9 Appify revolucionou nosso atendimento ao cliente. Não consigo imaginar nossa operação sem ela.",
-  },
-  {
-    name: "Maria Santos",
-    role: "Gerente de Operações",
-    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
-    text: "Reduzimos nosso tempo de resposta em 80% com a solução da I9 Appify.",
-  },
-  {
-    name: "Carlos Oliveira",
-    role: "Diretor Comercial",
-    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
-    text: "A melhor decisão que tomamos foi implementar a I9 Appify no nosso atendimento.",
-  },
 ];
 
 const faqs = [
