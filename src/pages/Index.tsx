@@ -11,7 +11,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate-fade-up">
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight uppercase">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Conecte sua empresa com{" "}
                 <span className="text-primary bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                   inteligência
@@ -20,8 +20,8 @@ const Index = () => {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Automatize seu atendimento e transforme a experiência dos seus clientes com soluções inovadoras.
               </p>
-              <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold float animate-pulse">
-                COMEÇAR AGORA
+              <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold animate-pulse">
+                Começar agora
               </button>
             </div>
             <div className="w-full lg:w-1/2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
@@ -38,7 +38,7 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16 uppercase">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Por que seu atendimento precisa de{" "}
             <span className="text-primary">automação</span>?
           </h2>
@@ -52,7 +52,7 @@ const Index = () => {
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4 uppercase">{feature.title}</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
@@ -63,7 +63,7 @@ const Index = () => {
       {/* App Features Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16 uppercase">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Como a <span className="text-primary">I9 Appify</span> transforma seu negócio?
           </h2>
           <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
@@ -78,7 +78,7 @@ const Index = () => {
                       {feature.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3 text-gray-900 uppercase">{feature.title}</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
                       <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
@@ -87,12 +87,12 @@ const Index = () => {
             </div>
             <div className="w-full lg:w-1/2 flex justify-center items-center">
               <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-10 rounded-2xl w-full shadow-xl">
-                <h3 className="text-2xl font-semibold text-center text-gray-900 mb-10 uppercase">
-                  PRONTO PARA COMEÇAR?
+                <h3 className="text-2xl font-semibold text-center text-gray-900 mb-10">
+                  Pronto para começar?
                 </h3>
                 <div className="flex justify-center">
-                  <button className="bg-primary text-white px-10 py-5 rounded-xl shadow-xl hover:shadow-primary/30 hover:scale-105 transition duration-300 text-xl font-bold uppercase animate-pulse">
-                    AGENDE UMA DEMONSTRAÇÃO
+                  <button className="bg-primary text-white px-10 py-5 rounded-xl shadow-xl hover:shadow-primary/30 hover:scale-105 transition duration-300 text-xl font-bold animate-pulse">
+                    Agende uma demonstração
                   </button>
                 </div>
               </div>
@@ -104,7 +104,7 @@ const Index = () => {
       {/* Simple Steps Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16 uppercase">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Como Funciona em <span className="text-primary">3 Passos Simples</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -117,7 +117,7 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
                   {index + 1}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4 uppercase">{step.title}</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{step.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             ))}
@@ -128,7 +128,7 @@ const Index = () => {
       {/* Challenges Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 uppercase">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Os Desafios Que Você Enfrenta no Atendimento
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -141,7 +141,7 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   {challenge.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 uppercase">{challenge.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{challenge.title}</h3>
                 <p className="text-gray-600">{challenge.description}</p>
               </div>
             ))}
@@ -152,28 +152,28 @@ const Index = () => {
       {/* Compare Solutions Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 uppercase">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             I9 Appify vs Outras Soluções
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-6 bg-primary/5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-primary mb-4 uppercase">I9 Appify</h3>
-              <ul className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="p-8 bg-primary/5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-primary mb-6">I9 Appify</h3>
+              <ul className="space-y-4">
                 {i9Features.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-2">
+                  <li key={index} className="flex items-center gap-3">
                     <span className="text-green-500 text-xl">✓</span>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-700 text-lg">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <h3 className="text-xl font-semibold text-gray-700 mb-4 uppercase">Outras Soluções</h3>
-              <ul className="space-y-3">
+            <div className="p-8 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-gray-700 mb-6">Outras Soluções</h3>
+              <ul className="space-y-4">
                 {otherSolutions.map((feature, index) => (
-                  <li key={index} className="flex items-center gap-2">
+                  <li key={index} className="flex items-center gap-3">
                     <span className="text-red-500 text-xl">✗</span>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-700 text-lg">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -185,7 +185,7 @@ const Index = () => {
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 uppercase">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             O Que Nossos Clientes Dizem
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -200,7 +200,7 @@ const Index = () => {
                     <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="font-semibold uppercase">{testimonial.name}</h3>
+                    <h3 className="font-semibold">{testimonial.name}</h3>
                     <p className="text-sm text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
@@ -215,13 +215,13 @@ const Index = () => {
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 uppercase">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Perguntas Frequentes
           </h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq, index) => (
               <div key={index} className="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="font-semibold mb-2 uppercase">{faq.question}</h3>
+                <h3 className="font-semibold mb-2">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
             ))}
@@ -239,7 +239,7 @@ const Index = () => {
               className="w-full h-auto max-w-xs mx-auto"
             />
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 uppercase">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Garantia de Satisfação
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -251,11 +251,11 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-8 uppercase">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Pronto para transformar seu atendimento?
           </h2>
-          <button className="bg-white text-primary px-10 py-5 rounded-xl shadow-xl hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-bold uppercase animate-pulse">
-            AGENDE UMA DEMONSTRAÇÃO
+          <button className="bg-white text-primary px-10 py-5 rounded-xl shadow-xl hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-bold animate-pulse">
+            Agende uma demonstração
           </button>
         </div>
       </section>
@@ -350,7 +350,7 @@ const testimonials = [
   {
     name: "João Silva",
     role: "CEO, Tech Solutions",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     text: "A I9 Appify revolucionou nosso atendimento ao cliente. Não consigo imaginar nossa operação sem ela.",
   },
   {
