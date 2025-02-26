@@ -20,7 +20,7 @@ const Index = () => {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Automatize seu atendimento e transforme a experiência dos seus clientes com soluções inovadoras.
               </p>
-              <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold animate-pulse">
+              <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold">
                 Começar agora
               </button>
             </div>
@@ -72,7 +72,7 @@ const Index = () => {
                 {appFeatures.map((feature, index) => (
                   <div 
                     key={index} 
-                    className="flex items-start gap-6 p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    className="flex items-start gap-6 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 text-primary text-2xl">
                       {feature.icon}
@@ -86,12 +86,12 @@ const Index = () => {
               </div>
             </div>
             <div className="w-full lg:w-1/2 flex justify-center items-center">
-              <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-10 rounded-2xl w-full shadow-xl">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-10 rounded-2xl w-full shadow-lg">
                 <h3 className="text-2xl font-semibold text-center text-gray-900 mb-10">
                   Pronto para começar?
                 </h3>
                 <div className="flex justify-center">
-                  <button className="bg-primary text-white px-10 py-5 rounded-xl shadow-xl hover:shadow-primary/30 hover:scale-105 transition duration-300 text-xl font-bold animate-pulse">
+                  <button className="bg-primary text-white px-10 py-5 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-xl font-semibold">
                     Agende uma demonstração
                   </button>
                 </div>
@@ -111,7 +111,7 @@ const Index = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-up relative"
+                className="p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-up relative"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
@@ -135,7 +135,7 @@ const Index = () => {
             {challenges.map((challenge, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
+                className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -156,7 +156,7 @@ const Index = () => {
             I9 Appify vs Outras Soluções
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="p-8 bg-primary/5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="p-8 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <h3 className="text-2xl font-semibold text-primary mb-6">I9 Appify</h3>
               <ul className="space-y-4">
                 {i9Features.map((feature, index) => (
@@ -167,7 +167,7 @@ const Index = () => {
                 ))}
               </ul>
             </div>
-            <div className="p-8 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="p-8 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
               <h3 className="text-2xl font-semibold text-gray-700 mb-6">Outras Soluções</h3>
               <ul className="space-y-4">
                 {otherSolutions.map((feature, index) => (
@@ -192,7 +192,7 @@ const Index = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
+                className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -220,7 +220,7 @@ const Index = () => {
           </h2>
           <div className="max-w-3xl mx-auto space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div key={index} className="p-6 bg-gray-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
                 <h3 className="font-semibold mb-2">{faq.question}</h3>
                 <p className="text-gray-600">{faq.answer}</p>
               </div>
@@ -249,14 +249,16 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-gradient-to-r from-primary to-blue-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-8">
             Pronto para transformar seu atendimento?
           </h2>
-          <button className="bg-white text-primary px-10 py-5 rounded-xl shadow-xl hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-bold animate-pulse">
-            Agende uma demonstração
-          </button>
+          <div className="flex justify-center">
+            <button className="bg-white text-primary px-10 py-5 rounded-xl shadow-lg hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-semibold">
+              Agende uma demonstração
+            </button>
+          </div>
         </div>
       </section>
     </div>
