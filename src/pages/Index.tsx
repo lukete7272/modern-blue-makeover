@@ -83,19 +83,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Logos Section */}
-      <section className="py-10 bg-white">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-gray-500 mb-8">Empresas que confiam em nossas soluções</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 1</div>
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 2</div>
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 3</div>
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 4</div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section id="features" className="py-20 bg-white">
         <div className="container mx-auto px-4">
