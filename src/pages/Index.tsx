@@ -273,18 +273,18 @@ const Index = () => {
       {/* Satisfaction Guarantee */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-md mx-auto mb-6">
+          <div className="max-w-md mx-auto mb-8">
             <img 
               src="https://ldqjunoqeepcdctheidd.supabase.co/storage/v1/object/public/i9appify/Landing%20page%20I9%20Appify/iamgens%20da%20pagina/7-DIAS-DE-GARANTIA%20(1).webp" 
               alt="Selo de Garantia" 
               className="w-full h-auto max-w-xs mx-auto"
             />
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Garantia de Satisfação
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+            GARANTIA DE SATISFAÇÃO
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Oferecemos 7 dias de garantia total de satisfação. Se você não estiver completamente satisfeito, devolvemos 100% do seu investimento.
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
+            Garantia de Satisfação: Sem Custos Extras!
           </p>
         </div>
       </section>
