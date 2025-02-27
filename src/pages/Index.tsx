@@ -3,6 +3,10 @@ import { useState } from "react";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(true);
+  
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/5531993988889`, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -20,7 +24,10 @@ const Index = () => {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Automatize seu atendimento e transforme a experiência dos seus clientes com soluções inovadoras.
               </p>
-              <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold">
+              <button 
+                onClick={openWhatsApp}
+                className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold"
+              >
                 Começar agora
               </button>
             </div>
@@ -94,7 +101,10 @@ const Index = () => {
                     Pronto para começar?
                   </h3>
                   <div className="flex justify-center">
-                    <button className="bg-primary text-white px-8 py-4 rounded-xl shadow-md hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold">
+                    <button 
+                      onClick={openWhatsApp}
+                      className="bg-primary text-white px-8 py-4 rounded-xl shadow-md hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold"
+                    >
                       Agende uma demonstração
                     </button>
                   </div>
@@ -229,7 +239,10 @@ const Index = () => {
             Pronto para transformar seu atendimento?
           </h2>
           <div className="flex justify-center">
-            <button className="bg-white text-primary px-10 py-5 rounded-xl shadow-lg hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-semibold">
+            <button 
+              onClick={openWhatsApp}
+              className="bg-white text-primary px-10 py-5 rounded-xl shadow-lg hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-semibold"
+            >
               Agende uma demonstração
             </button>
           </div>
