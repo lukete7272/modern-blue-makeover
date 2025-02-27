@@ -1,15 +1,54 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { MessageCircle } from "lucide-react";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   const openWhatsApp = () => {
     window.open(`https://wa.me/5531993988889`, '_blank');
   };
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white relative">
+      {/* NavBar */}
+      <nav className="sticky top-0 bg-white/80 backdrop-blur-md z-50 shadow-sm">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex justify-between items-center">
+            <div className="text-xl font-bold text-primary">I9 Appify</div>
+            <div className="hidden md:flex space-x-6">
+              <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-primary transition">Benefícios</button>
+              <button onClick={() => scrollToSection('how-it-works')} className="text-gray-700 hover:text-primary transition">Como Funciona</button>
+              <button onClick={() => scrollToSection('faq')} className="text-gray-700 hover:text-primary transition">FAQ</button>
+              <button onClick={openWhatsApp} className="bg-primary/10 text-primary px-4 py-1 rounded-lg hover:bg-primary/20 transition">
+                Contato
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
@@ -26,15 +65,17 @@ const Index = () => {
               </p>
               <button 
                 onClick={openWhatsApp}
-                className="bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold"
+                className="group bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-primary/30 hover:scale-105 transition duration-300 text-lg font-semibold flex items-center gap-2"
               >
-                Começar agora
+                <span>Começar agora</span>
+                <MessageCircle className="w-5 h-5 transform group-hover:scale-110 transition-transform" />
+                <span className="text-xs bg-white/20 px-2 py-0.5 rounded absolute -top-2 right-0 opacity-0 group-hover:opacity-100 transition-opacity">Via WhatsApp</span>
               </button>
             </div>
             <div className="w-full lg:w-1/2 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               <img
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
-                alt="Tecnologia Moderna"
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                alt="Automação Inteligente"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 transform hover:scale-[1.02]"
               />
             </div>
@@ -42,8 +83,21 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Logos Section */}
+      <section className="py-10 bg-white">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-gray-500 mb-8">Empresas que confiam em nossas soluções</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
+            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 1</div>
+            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 2</div>
+            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 3</div>
+            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">Logo 4</div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section id="features" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Por que seu atendimento precisa de{" "}
@@ -61,6 +115,20 @@ const Index = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-gradient-to-r from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center p-6">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-lg text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -103,9 +171,11 @@ const Index = () => {
                   <div className="flex justify-center">
                     <button 
                       onClick={openWhatsApp}
-                      className="bg-primary text-white px-8 py-4 rounded-xl shadow-md hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold"
+                      className="group bg-primary text-white px-8 py-4 rounded-xl shadow-md hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold flex items-center gap-2"
                     >
-                      Agende uma demonstração
+                      <span>Agende uma demonstração</span>
+                      <MessageCircle className="w-5 h-5" />
+                      <span className="text-xs bg-white/20 px-2 py-0.5 rounded absolute -top-2 right-0 opacity-0 group-hover:opacity-100 transition-opacity">Via WhatsApp</span>
                     </button>
                   </div>
                 </div>
@@ -116,7 +186,7 @@ const Index = () => {
       </section>
 
       {/* Simple Steps Section */}
-      <section className="py-20 bg-white">
+      <section id="how-it-works" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Como Funciona em <span className="text-primary">3 Passos Simples</span>
@@ -197,7 +267,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section id="faq" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Perguntas Frequentes
@@ -241,13 +311,22 @@ const Index = () => {
           <div className="flex justify-center">
             <button 
               onClick={openWhatsApp}
-              className="bg-white text-primary px-10 py-5 rounded-xl shadow-lg hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-semibold"
+              className="bg-white text-primary px-10 py-5 rounded-xl shadow-lg hover:bg-gray-100 hover:scale-105 transition duration-300 text-xl font-semibold flex items-center gap-2"
             >
-              Agende uma demonstração
+              <span>Agende uma demonstração</span>
+              <MessageCircle className="w-6 h-6" />
             </button>
           </div>
         </div>
       </section>
+
+      {/* Floating WhatsApp Button */}
+      <button 
+        onClick={openWhatsApp}
+        className={`fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 z-50 transition-all duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      >
+        <MessageCircle className="w-6 h-6" />
+      </button>
     </div>
   );
 };
@@ -268,6 +347,21 @@ const features = [
     title: "Melhore Resultados",
     description: "Aumente a satisfação dos clientes e impulsione suas vendas.",
   },
+];
+
+const stats = [
+  {
+    value: "+45%",
+    label: "Aumento na satisfação do cliente"
+  },
+  {
+    value: "-35%",
+    label: "Redução em custos operacionais"
+  },
+  {
+    value: "+60%",
+    label: "Aumento na eficiência da equipe"
+  }
 ];
 
 const appFeatures = [
