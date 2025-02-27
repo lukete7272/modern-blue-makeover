@@ -418,20 +418,24 @@ const otherSolutions = [
 
 const faqs = [
   {
+    question: "Como funciona a automação do WhatsApp?",
+    answer: "Nossa solução utiliza inteligência artificial para automatizar respostas e interações no WhatsApp, mantendo um atendimento personalizado e eficiente 24/7.",
+  },
+  {
+    question: "É necessário ter conhecimento técnico?",
+    answer: "Não! Nossa plataforma é intuitiva e fácil de usar. Oferecemos suporte completo para configuração e treinamento da sua equipe.",
+  },
+  {
     question: "Quanto tempo leva para implementar?",
-    answer: "A implementação é rápida e pode ser concluída em até 24 horas após a contratação.",
+    answer: "A implementação é rápida, geralmente entre 24 a 48 horas após a contratação. Nosso time oferece suporte durante todo o processo.",
   },
   {
-    question: "Preciso de conhecimento técnico?",
-    answer: "Não! Nossa plataforma é intuitiva e oferecemos todo o suporte necessário.",
+    question: "É compatível com meu WhatsApp Business?",
+    answer: "Sim! Nossa solução é totalmente compatível com WhatsApp Business e pode ser integrada facilmente com seus sistemas existentes.",
   },
   {
-    question: "Como funciona o período de teste?",
-    answer: "Oferecemos 14 dias de teste gratuito com todas as funcionalidades disponíveis.",
-  },
-  {
-    question: "Posso personalizar as respostas?",
-    answer: "Sim! Você tem total controle sobre as respostas e pode personalizá-las conforme sua necessidade.",
+    question: "Como funciona a garantia de 7 dias?",
+    answer: "Oferecemos 7 dias de garantia incondicional. Se não estiver satisfeito, devolvemos 100% do seu investimento, sem questionamentos.",
   },
 ];
 
