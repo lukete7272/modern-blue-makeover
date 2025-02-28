@@ -445,11 +445,11 @@ const Index = () => {
             Integre com as Ferramentas que Você Já Usa
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
-            Nossa plataforma se conecta facilmente com diversos serviços populares
+            Nossa plataforma se conecta facilmente com ferramentas essenciais
           </p>
           
           <div className="logo-grid max-w-4xl mx-auto">
-            {integrations.map((integration, index) => (
+            {updatedIntegrations.map((integration, index) => (
               <div key={index} className="logo-item">
                 <div className="h-16 w-24 flex items-center justify-center">
                   <img 
@@ -720,18 +720,13 @@ const Index = () => {
                     <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
                   </svg>
                 </a>
-                <a href="#" className="text-gray-400 hover:text-primary" aria-label="LinkedIn">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                </a>
               </div>
             </div>
             
             <div className="footer-section">
               <h3 className="footer-heading">Produtos</h3>
               <a href="#" className="footer-link">Automação de Atendimento</a>
-              <a href="#" className="footer-link">Chatbot Inteligente</a>
+              <a href="#" className="footer-link">Agente Inteligente</a>
               <a href="#" className="footer-link">Análise de Conversas</a>
               <a href="#" className="footer-link">Integrações</a>
             </div>
@@ -740,13 +735,11 @@ const Index = () => {
               <h3 className="footer-heading">Links Úteis</h3>
               <a href="#" className="footer-link">Sobre Nós</a>
               <a href="#" className="footer-link">Blog</a>
-              <a href="#" className="footer-link">Carreiras</a>
               <a href="#" className="footer-link">Contato</a>
             </div>
             
             <div className="footer-section">
               <h3 className="footer-heading">Suporte</h3>
-              <a href="#" className="footer-link">Centro de Ajuda</a>
               <a href="#" className="footer-link">Política de Privacidade</a>
               <a href="#" className="footer-link">Termos de Serviço</a>
               <a href="#" className="footer-link">FAQ</a>
@@ -865,7 +858,7 @@ const stats = [
   }
 ];
 
-// App features com benefícios adicionais
+// App features com benefícios adicionais - Alterado de chatbot para agente
 const appFeatures = [
   {
     icon: <RefreshCw className="w-8 h-8" />,
@@ -880,7 +873,7 @@ const appFeatures = [
   {
     icon: <MessageSquare className="w-8 h-8" />,
     title: "Respostas Personalizadas",
-    description: "Chatbot que aprende com cada interação e personaliza o atendimento para cada cliente.",
+    description: "Agente que aprende com cada interação e personaliza o atendimento para cada cliente.",
     benefits: [
       "Mensagens adaptadas ao perfil do cliente",
       "Personalização por segmento e histórico",
@@ -918,7 +911,7 @@ const steps = [
   },
 ];
 
-// Gallery items
+// Gallery items - Alterado de chatbot para agente
 const galleryItems = [
   {
     title: "Dashboard de Atendimento",
@@ -926,8 +919,8 @@ const galleryItems = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Chat Automatizado",
-    description: "Chatbot inteligente que aprende com cada interação para melhorar o atendimento.",
+    title: "Agente Automatizado",
+    description: "Agente inteligente que aprende com cada interação para melhorar o atendimento.",
     image: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -936,8 +929,8 @@ const galleryItems = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Integração Multi-canal",
-    description: "Conecte-se com seus clientes em qualquer canal de comunicação.",
+    title: "Integração com WhatsApp",
+    description: "Conecte-se com seus clientes diretamente pelo WhatsApp Business.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
   },
   {
@@ -952,39 +945,35 @@ const galleryItems = [
   }
 ];
 
-// Integrations
-const integrations = [
+// Novas integrações - apenas com as ferramentas solicitadas
+const updatedIntegrations = [
   {
-    name: "WhatsApp Business API",
+    name: "WhatsApp Business",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png"
   },
   {
-    name: "Facebook",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/512px-Facebook_f_logo_%282019%29.svg.png"
+    name: "WhatsApp",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png"
   },
   {
-    name: "Instagram",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/512px-Instagram_icon.png"
-  },
-  {
-    name: "Shopify",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/512px-Shopify_logo_2018.svg.png"
-  },
-  {
-    name: "WooCommerce",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/WooCommerce_logo.svg/512px-WooCommerce_logo.svg.png"
-  },
-  {
-    name: "Salesforce",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/512px-Salesforce.com_logo.svg.png"
-  },
-  {
-    name: "Hubspot",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/HubSpot_Logo.svg/512px-HubSpot_Logo.svg.png"
-  },
-  {
-    name: "Google Calendar",
+    name: "Google Agenda",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/512px-Google_Calendar_icon_%282020%29.svg.png"
+  },
+  {
+    name: "Google Drive",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/512px-Google_Drive_icon_%282020%29.svg.png"
+  },
+  {
+    name: "Google Sheets",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png"
+  },
+  {
+    name: "Gmail",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png"
+  },
+  {
+    name: "Supabase",
+    logo: "https://avatars.githubusercontent.com/u/54469796?s=200&v=4"
   }
 ];
 
