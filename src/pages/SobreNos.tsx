@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MessageCircle } from 'lucide-react';
+import { ArrowLeft, MessageCircle, Zap as ZapIcon, TrendingUp as TrendingUpIcon } from 'lucide-react';
 
 const SobreNos = () => {
   const openWhatsApp = () => {
@@ -58,7 +58,7 @@ const SobreNos = () => {
               
               <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 text-center">
                 <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
-                  <Zap className="w-8 h-8" />
+                  <ZapIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Inovação</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-base">
@@ -68,7 +68,7 @@ const SobreNos = () => {
               
               <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 text-center">
                 <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
-                  <TrendingUp className="w-8 h-8" />
+                  <TrendingUpIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Resultados</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-base">
