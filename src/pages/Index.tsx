@@ -23,6 +23,7 @@ import {
   AlertCircle,
   Layers
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -725,24 +726,22 @@ const Index = () => {
             
             <div className="footer-section">
               <h3 className="footer-heading">Produtos</h3>
-              <a href="#" className="footer-link">Automação de Atendimento</a>
-              <a href="#" className="footer-link">Agente Inteligente</a>
-              <a href="#" className="footer-link">Análise de Conversas</a>
-              <a href="#" className="footer-link">Integrações</a>
+              <a onClick={() => scrollToSection('features')} className="footer-link cursor-pointer">Automação de Atendimento</a>
+              <a onClick={() => scrollToSection('features')} className="footer-link cursor-pointer">Agente Inteligente</a>
+              <a onClick={() => scrollToSection('integrations')} className="footer-link cursor-pointer">Integrações</a>
             </div>
             
             <div className="footer-section">
               <h3 className="footer-heading">Links Úteis</h3>
-              <a href="#" className="footer-link">Sobre Nós</a>
-              <a href="#" className="footer-link">Blog</a>
-              <a href="#" className="footer-link">Contato</a>
+              <Link to="/sobre-nos" className="footer-link">Sobre Nós</Link>
+              <a onClick={() => scrollToSection('faq')} className="footer-link cursor-pointer">FAQ</a>
+              <a onClick={openWhatsApp} className="footer-link cursor-pointer">Contato</a>
             </div>
             
             <div className="footer-section">
               <h3 className="footer-heading">Suporte</h3>
-              <a href="#" className="footer-link">Política de Privacidade</a>
-              <a href="#" className="footer-link">Termos de Serviço</a>
-              <a href="#" className="footer-link">FAQ</a>
+              <Link to="/politica-privacidade" className="footer-link">Política de Privacidade</Link>
+              <Link to="/termos-servico" className="footer-link">Termos de Serviço</Link>
             </div>
           </div>
           
@@ -766,7 +765,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-700 dark:text-gray-300 text-sm md:text-base">
-              <p>Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com nossa <a href="#" className="text-primary underline">Política de Cookies</a>.</p>
+              <p>Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com nossa <Link to="/politica-privacidade" className="text-primary underline">Política de Privacidade</Link>.</p>
             </div>
             <div className="flex gap-3">
               <button 
