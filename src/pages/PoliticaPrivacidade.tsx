@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Shield, Lock, FileText, UserCheck, Server, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Shield, Lock, FileText } from 'lucide-react';
 
 const PoliticaPrivacidade = () => {
   return (
@@ -37,7 +37,7 @@ const PoliticaPrivacidade = () => {
                 </h2>
                 <div className="bg-gray-50 dark:bg-gray-700/30 p-4 rounded-lg border-l-4 border-primary">
                   <p>
-                    A I9 Appify está comprometida com a proteção da sua privacidade. Esta Política de Privacidade descreve como coletamos, usamos, compartilhamos e protegemos suas informações pessoais quando você utiliza nossos serviços, visita nosso site ou interage conosco.
+                    A I9 Appify está comprometida com a proteção da sua privacidade. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações pessoais quando você utiliza nossos serviços, visita nosso site ou interage conosco.
                   </p>
                 </div>
               </div>
@@ -47,44 +47,15 @@ const PoliticaPrivacidade = () => {
                   <FileText className="w-6 h-6 mr-2 text-primary" />
                   Informações que Coletamos
                 </h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <UserCheck className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <strong className="text-gray-900 dark:text-white">Informações de Contato:</strong>
-                      <p className="text-gray-600 dark:text-gray-400">Nome, endereço de e-mail, número de telefone, empresa e cargo.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <ExternalLink className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <strong className="text-gray-900 dark:text-white">Informações de Uso:</strong>
-                      <p className="text-gray-600 dark:text-gray-400">Como você interage com nossos serviços, incluindo funcionalidades acessadas e tempo de uso.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Server className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <strong className="text-gray-900 dark:text-white">Informações de Dispositivo:</strong>
-                      <p className="text-gray-600 dark:text-gray-400">Tipo de dispositivo, sistema operacional, endereço IP e identificadores únicos de dispositivo.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <FileText className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <strong className="text-gray-900 dark:text-white">Cookies e Tecnologias Similares:</strong>
-                      <p className="text-gray-600 dark:text-gray-400">Utilizamos cookies para melhorar sua experiência, coletar estatísticas e personalizar conteúdo.</p>
-                    </div>
-                  </li>
-                </ul>
+                <p className="mb-4">
+                  Coletamos informações quando você visita nosso site, entra em contato conosco ou utiliza nossos serviços. Essas informações incluem dados de contato como nome, email e número de telefone, além de informações sobre como você utiliza nossos serviços.
+                </p>
+                <p className="mb-4">
+                  Também podemos coletar informações técnicas como seu endereço IP, tipo de dispositivo e navegador quando você utiliza nosso site.
+                </p>
+                <p>
+                  Utilizamos cookies para melhorar sua experiência em nosso site, coletar estatísticas e personalizar conteúdo.
+                </p>
               </div>
 
               <div>
@@ -100,13 +71,7 @@ const PoliticaPrivacidade = () => {
                     <p>Personalizar sua experiência e fornecer conteúdo relevante</p>
                   </div>
                   <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
-                    <p>Comunicar sobre atualizações, ofertas e informações relacionadas</p>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
-                    <p>Proteger nossos serviços e prevenir atividades fraudulentas</p>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
-                    <p>Cumprir obrigações legais e regulatórias</p>
+                    <p>Comunicar sobre atualizações e informações relacionadas</p>
                   </div>
                 </div>
               </div>
