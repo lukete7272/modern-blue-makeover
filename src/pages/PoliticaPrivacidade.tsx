@@ -112,47 +112,13 @@ const PoliticaPrivacidade = () => {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Compartilhamento de Informações</h2>
-                <p className="mb-4">
-                  Podemos compartilhar suas informações com:
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Atualizações desta Política</h2>
+                <p className="mb-2">
+                  Esta política pode ser atualizada periodicamente. Publicaremos a versão revisada em nosso site e, quando necessário, notificaremos você sobre mudanças significativas.
                 </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-400">
-                  <li>Parceiros de negócios e fornecedores que nos auxiliam na prestação de serviços;</li>
-                  <li>Autoridades competentes, quando legalmente exigido;</li>
-                  <li>Terceiros, em caso de reorganização empresarial, fusão, venda ou transferência de ativos.</li>
-                </ul>
-                <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 rounded-r-lg">
-                  <p className="text-green-800 dark:text-green-300 font-medium">
-                    Nunca vendemos ou alugamos suas informações pessoais a terceiros para fins de marketing.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Seus Direitos</h2>
-                <div className="bg-primary/5 dark:bg-primary/10 p-6 rounded-xl">
-                  <p className="mb-4 text-gray-800 dark:text-gray-200">
-                    Você tem direito a:
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs">1</div>
-                      <span>Acessar, corrigir ou excluir seus dados pessoais</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs">2</div>
-                      <span>Limitar ou se opor ao processamento de seus dados</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs">3</div>
-                      <span>Receber seus dados em formato portável</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-xs">4</div>
-                      <span>Retirar seu consentimento a qualquer momento</span>
-                    </li>
-                  </ul>
-                </div>
+                <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+                  Última atualização: {new Date().toLocaleDateString('pt-BR')}
+                </p>
               </div>
 
               <div>
@@ -162,26 +128,16 @@ const PoliticaPrivacidade = () => {
                     Se você tiver dúvidas sobre esta Política de Privacidade ou sobre como tratamos seus dados, entre em contato conosco:
                   </p>
                   <a 
-                    href="mailto:privacidade@i9appify.com.br" 
+                    href="mailto:contato@i9appify.com" 
                     className="inline-flex items-center gap-2 text-white bg-primary px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                       <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
-                    privacidade@i9appify.com.br
+                    contato@i9appify.com
                   </a>
                 </div>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Atualizações desta Política</h2>
-                <p className="mb-2">
-                  Esta política pode ser atualizada periodicamente. Publicaremos a versão revisada em nosso site e, quando necessário, notificaremos você sobre mudanças significativas.
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-                  Última atualização: {new Date().toLocaleDateString('pt-BR')}
-                </p>
               </div>
             </div>
           </div>

@@ -32,7 +32,7 @@ const TermosServico = () => {
                   Última atualização: {new Date().toLocaleDateString('pt-BR')}
                 </p>
                 <p className="mt-4">
-                  Bem-vindo à I9 Appify. Estes Termos de Serviço ("Termos") regem seu acesso e uso dos serviços, software e sites da I9 Appify (coletivamente, os "Serviços"). Ao usar ou acessar os Serviços, você concorda com estes Termos. Se você estiver usando os Serviços em nome de uma organização, você está concordando com estes Termos em nome dessa organização.
+                  Bem-vindo à I9 Appify. Estes Termos de Serviço ("Termos") regem seu acesso e uso dos serviços da I9 Appify. Ao usar ou acessar os Serviços, você concorda com estes Termos.
                 </p>
               </div>
 
@@ -42,7 +42,7 @@ const TermosServico = () => {
                   Uso dos Serviços
                 </h2>
                 <p className="mb-4">
-                  Você deve seguir todas as políticas disponibilizadas a você dentro dos Serviços. Não utilize nossos Serviços de forma inadequada. Podemos suspender ou interromper o fornecimento de nossos Serviços se você não cumprir nossos termos ou políticas ou se estivermos investigando suspeita de má conduta.
+                  Você deve seguir todas as políticas disponibilizadas a você dentro dos Serviços. Não utilize nossos Serviços de forma inadequada. Podemos suspender ou interromper o fornecimento de nossos Serviços se você não cumprir nossos termos ou políticas.
                 </p>
                 <p>
                   O uso dos Serviços não lhe confere a propriedade de nenhum direito de propriedade intelectual sobre nossos Serviços ou o conteúdo que você acessar. Você não pode usar o conteúdo de nossos Serviços a menos que obtenha permissão do proprietário ou que seja permitido por lei.
@@ -64,50 +64,26 @@ const TermosServico = () => {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Conteúdo nos Serviços</h2>
-                <p className="mb-4">
-                  Você é responsável por qualquer conteúdo que enviar, publicar ou exibir através dos Serviços. Você mantém a propriedade de qualquer propriedade intelectual que você detenha em tal conteúdo. Ao enviar, postar ou exibir conteúdo, você concede à I9 Appify uma licença mundial para usar, hospedar, armazenar, reproduzir, modificar, criar obras derivadas, comunicar, publicar, executar publicamente, exibir publicamente e distribuir tal conteúdo.
-                </p>
-              </div>
-
-              <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <AlertCircle className="w-6 h-6 mr-2 text-primary" />
                   Modificações nos Serviços
                 </h2>
                 <p>
-                  A I9 Appify está constantemente alterando e melhorando seus Serviços. Podemos adicionar ou remover funcionalidades ou recursos, e podemos suspender ou interromper um Serviço por completo. Você pode parar de usar os Serviços a qualquer momento, embora lamentemos ver você sair.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Garantias e Isenções de Responsabilidade</h2>
-                <p className="mb-4">
-                  Fornecemos nossos Serviços usando um nível comercialmente razoável de habilidade e cuidado e esperamos que você aproveite seu uso deles. Mas existem certas coisas que não prometemos sobre nossos Serviços. Exceto conforme expressamente previsto nestes termos ou termos adicionais, nem a I9 Appify nem seus fornecedores ou distribuidores fazem quaisquer promessas específicas sobre os serviços.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Responsabilidade pelos Serviços</h2>
-                <p className="mb-4">
-                  Quando permitido por lei, a I9 Appify e seus fornecedores e distribuidores não serão responsáveis por perda de lucros, receitas ou dados, perdas financeiras ou danos indiretos, especiais, consequenciais, exemplares ou punitivos.
+                  A I9 Appify está constantemente melhorando seus Serviços. Podemos adicionar ou remover funcionalidades ou recursos, e podemos suspender ou interromper um Serviço por completo.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Sobre estes Termos</h2>
                 <p className="mb-4">
-                  Podemos modificar estes termos ou quaisquer termos adicionais que se apliquem a um Serviço para, por exemplo, refletir alterações na lei ou mudanças em nossos Serviços. Você deve consultar os termos regularmente. Publicaremos avisos sobre modificações nestes termos nesta página.
-                </p>
-                <p>
-                  Se você não concordar com os termos alterados de um Serviço, deve descontinuar o uso desse Serviço.
+                  Podemos modificar estes termos para refletir alterações na lei ou mudanças em nossos Serviços. Publicaremos avisos sobre modificações nestes termos nesta página.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Contato</h2>
                 <p>
-                  Se você tiver dúvidas sobre estes Termos de Serviço, entre em contato conosco pelo e-mail: <a href="mailto:termos@i9appify.com.br" className="text-primary hover:underline">termos@i9appify.com.br</a>
+                  Se você tiver dúvidas sobre estes Termos de Serviço, entre em contato conosco pelo e-mail: <a href="mailto:contato@i9appify.com" className="text-primary hover:underline">contato@i9appify.com</a>
                 </p>
               </div>
             </div>
