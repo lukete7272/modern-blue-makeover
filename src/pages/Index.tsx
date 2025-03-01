@@ -1,4 +1,4 @@
-<lov-code>
+
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -22,6 +22,211 @@ import {
   Layers
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Define data arrays for the components
+const highlightItems = [
+  {
+    icon: <Clock className="w-6 h-6" />,
+    title: "Resposta Rápida"
+  },
+  {
+    icon: <MessageSquare className="w-6 h-6" />,
+    title: "Atendimento Humanizado"
+  },
+  {
+    icon: <RefreshCw className="w-6 h-6" />,
+    title: "Disponível 24/7"
+  }
+];
+
+const features = [
+  {
+    icon: <MessageCircle className="w-8 h-8" />,
+    title: "Comunicação Eficiente",
+    description: "Torne seu atendimento mais ágil e organizado, garantindo respostas rápidas e precisas para seus clientes.",
+    bullets: [
+      "Automação de respostas para dúvidas frequentes",
+      "Atendimento personalizado e escalável",
+      "Redução do tempo de espera do cliente"
+    ]
+  },
+  {
+    icon: <Target className="w-8 h-8" />,
+    title: "Experiência Aprimorada",
+    description: "Ofereça uma experiência excepcional aos seus clientes, com respostas rápidas e personalizadas.",
+    bullets: [
+      "Mensagens personalizadas por segmento de cliente",
+      "Comunicação clara e objetiva",
+      "Suporte disponível quando o cliente precisa"
+    ]
+  },
+  {
+    icon: <TrendingUp className="w-8 h-8" />,
+    title: "Crescimento de Vendas",
+    description: "Aumente suas conversões com um atendimento eficiente que não deixa oportunidades escaparem.",
+    bullets: [
+      "Recuperação de clientes potenciais",
+      "Redução do abandono durante o atendimento",
+      "Aumento da satisfação e fidelização"
+    ]
+  }
+];
+
+const stats = [
+  {
+    value: "85%",
+    label: "Redução no tempo de resposta",
+    description: "Tempo médio de atendimento melhorado significativamente"
+  },
+  {
+    value: "63%",
+    label: "Aumento de conversões",
+    description: "Mais vendas fechadas com atendimento automatizado"
+  },
+  {
+    value: "24/7",
+    label: "Disponibilidade",
+    description: "Seu negócio sempre disponível para os clientes"
+  }
+];
+
+const simplifiedAppFeatures = [
+  {
+    icon: <MessageCircle className="w-8 h-8" />,
+    title: "Automação de Respostas",
+    description: "Respostas automáticas para perguntas frequentes, permitindo atendimento imediato mesmo fora do horário comercial.",
+    benefits: [
+      "Atendimento 24/7 sem intervenção humana",
+      "Redução de tempo em perguntas repetitivas",
+      "Padrão de resposta uniforme para todos os clientes"
+    ]
+  },
+  {
+    icon: <Zap className="w-8 h-8" />,
+    title: "Respostas Rápidas",
+    description: "Templates de mensagens prontas para agilizar a comunicação com seus clientes em diferentes situações.",
+    benefits: [
+      "Comunicação padronizada e profissional",
+      "Agilidade no atendimento ao cliente",
+      "Redução de erros de digitação e formatação"
+    ]
+  },
+  {
+    icon: <Settings className="w-8 h-8" />,
+    title: "Configuração Simples",
+    description: "Implementação rápida e sem complicações, permitindo que você comece a usar o sistema em poucos minutos.",
+    benefits: [
+      "Sem necessidade de conhecimentos técnicos",
+      "Personalização conforme as necessidades do seu negócio",
+      "Suporte dedicado durante a configuração"
+    ]
+  },
+  {
+    icon: <AlertCircle className="w-8 h-8" />,
+    title: "Atendimento Prioritário",
+    description: "Identificação e priorização de mensagens importantes, garantindo atenção imediata aos assuntos mais urgentes.",
+    benefits: [
+      "Classificação automática de mensagens por prioridade",
+      "Alertas para mensagens que precisam de atenção urgente",
+      "Melhor organização do fluxo de trabalho"
+    ]
+  }
+];
+
+const simplifiedGalleryItems = [
+  {
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
+    title: "Automação de WhatsApp",
+    description: "Atendimento automatizado para perguntas frequentes, liberando sua equipe para tarefas mais complexas."
+  },
+  {
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    title: "Modelos de Resposta",
+    description: "Templates pré-configurados para diferentes cenários de atendimento ao cliente."
+  }
+];
+
+const updatedIntegrations = [
+  {
+    name: "WhatsApp Business",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/512px-WhatsApp.svg.png"
+  },
+  {
+    name: "Google Workspace",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+  },
+  {
+    name: "Microsoft 365",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png"
+  },
+  {
+    name: "Shopify",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/512px-Shopify_logo_2018.svg.png"
+  },
+  {
+    name: "WooCommerce",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/WooCommerce_logo.svg/512px-WooCommerce_logo.svg.png"
+  },
+  {
+    name: "Mercado Livre",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Mercado_Libre.svg/512px-Mercado_Libre.svg.png"
+  }
+];
+
+const steps = [
+  {
+    title: "Entre em contato",
+    description: "Agende uma demonstração gratuita e conheça como podemos transformar seu atendimento ao cliente.",
+    image: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    title: "Configuração personalizada",
+    description: "Configuramos o sistema de acordo com as necessidades específicas do seu negócio.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    title: "Comece a usar",
+    description: "Aproveite os benefícios da automação em seu WhatsApp Business e veja os resultados imediatos.",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+const challenges = [
+  {
+    icon: <Clock className="w-6 h-6" />,
+    title: "Demora nas respostas",
+    description: "Clientes cada vez mais impacientes esperam respostas imediatas, independente do horário.",
+    solution: "Automatização que garante respostas instantâneas 24 horas por dia, 7 dias por semana."
+  },
+  {
+    icon: <AlertCircle className="w-6 h-6" />,
+    title: "Inconsistência no atendimento",
+    description: "Diferentes atendentes podem oferecer informações divergentes ou incompletas.",
+    solution: "Respostas padronizadas e precisas para garantir consistência em todos os atendimentos."
+  },
+  {
+    icon: <Layers className="w-6 h-6" />,
+    title: "Volume de mensagens",
+    description: "Dificuldade em gerenciar a quantidade crescente de mensagens recebidas diariamente.",
+    solution: "Sistema que organiza e prioriza mensagens, permitindo atendimento eficiente mesmo com grande volume."
+  }
+];
+
+const i9Features = [
+  "Implementação rápida e sem complicações",
+  "Atendimento 24/7 com respostas automáticas",
+  "Suporte técnico personalizado",
+  "Sem necessidade de conhecimentos técnicos",
+  "Facilidade de uso para qualquer empresa"
+];
+
+const otherSolutions = [
+  "Implementação complexa e demorada",
+  "Atendimento limitado ao horário comercial",
+  "Suporte técnico genérico",
+  "Exige conhecimentos técnicos avançados",
+  "Difícil adaptação para pequenas empresas"
+];
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -599,3 +804,425 @@ const Index = () => {
             Perguntas Frequentes
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+            Esclarecemos as dúvidas mais comuns sobre nossa solução
+          </p>
+          
+          <div className="max-w-3xl mx-auto divide-y divide-gray-200 dark:divide-gray-700">
+            {faqs.map((faq, index) => (
+              <div key={index} className="py-5">
+                <button
+                  className="flex justify-between items-center w-full text-left focus:outline-none"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={activeAccordion === index}
+                >
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">{faq.question}</h3>
+                  <span className="ml-6 flex-shrink-0">
+                    {activeAccordion === index ? (
+                      <ChevronUp className="h-5 w-5 text-primary" />
+                    ) : (
+                      <ChevronDown className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                    )}
+                  </span>
+                </button>
+                <div
+                  className={`mt-3 transition-all duration-300 overflow-hidden ${
+                    activeAccordion === index ? "max-h-96" : "max-h-0"
+                  }`}
+                >
+                  <p className="text-gray-600 dark:text-gray-300">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">Não encontrou o que procurava?</p>
+            <button 
+              onClick={openWhatsApp}
+              className="bg-primary text-white px-6 py-3 rounded-xl shadow-md hover:bg-primary/90 transition"
+            >
+              Entre em Contato
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/20 dark:from-primary/10 dark:to-primary/5 relative overflow-hidden">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8">
+            Pronto para transformar seu atendimento?
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
+            Comece hoje mesmo a oferecer uma experiência excepcional aos seus clientes com a I9 Appify
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+              onClick={openWhatsApp}
+              className="cta-button-large group"
+            >
+              <span>Converse com um especialista</span>
+              <MessageCircle className="w-6 h-6" />
+              <span className="text-xs bg-white/20 px-2 py-0.5 rounded absolute -top-2 right-0 opacity-0 group-hover:opacity-100 transition-opacity">Via WhatsApp</span>
+            </button>
+          </div>
+        </div>
+        
+        {/* Decorative elements */}
+        <div className="absolute top-1/4 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-blue-100/50 dark:bg-blue-900/30 rounded-full blur-3xl"></div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-white dark:bg-gray-900 py-12 border-t border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="text-2xl font-bold text-primary mb-4">I9 Appify</div>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                Transformando a comunicação das empresas com automação inteligente para WhatsApp Business.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-primary">
+                  <span className="sr-only">Facebook</span>
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-primary">
+                  <span className="sr-only">Instagram</span>
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                  </svg>
+                </a>
+                <a href="#" className="text-gray-400 hover:text-primary">
+                  <span className="sr-only">LinkedIn</span>
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Empresa</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link to="/sobre-nos" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition">
+                    Sobre Nós
+                  </Link>
+                </li>
+                <li>
+                  <button 
+                    onClick={openWhatsApp}
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
+                  >
+                    Contato
+                  </button>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recursos</h3>
+              <ul className="space-y-3">
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('features')}
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
+                  >
+                    Benefícios
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('how-it-works')}
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
+                  >
+                    Como Funciona
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('faq')}
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
+                  >
+                    FAQ
+                  </button>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Legal</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link to="/politica-privacidade" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition">
+                    Política de Privacidade
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/termos-servico" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition">
+                    Termos de Serviço
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+            <p className="text-gray-500 dark:text-gray-400 text-sm text-center">
+              &copy; {new Date().getFullYear()} I9 Appify. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Cookie Consent Banner */}
+      {cookieConsentVisible && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 p-4 shadow-lg z-50 border-t border-gray-200 dark:border-gray-700">
+          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p className="text-gray-700 dark:text-gray-300 mb-4 md:mb-0 text-sm md:text-base">
+              Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa{" "}
+              <Link to="/politica-privacidade" className="text-primary hover:underline">
+                Política de Privacidade
+              </Link>.
+            </p>
+            <div className="flex space-x-4">
+              <button
+                onClick={declineCookies}
+                className="py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm"
+              >
+                Recusar
+              </button>
+              <button
+                onClick={acceptCookies}
+                className="py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary/90 text-sm"
+              >
+                Aceitar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CSS Classes */}
+      <style jsx>{`
+        .blue-gradient {
+          background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+        }
+        
+        .dark .blue-gradient {
+          background: linear-gradient(135deg, #1a237e10 0%, #0d47a110 100%);
+        }
+        
+        .reading-progress-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: var(--primary);
+          transform-origin: left;
+          z-index: 100;
+        }
+        
+        .feature-card {
+          background: white;
+          border-radius: 1rem;
+          padding: 2rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+        }
+        
+        .dark .feature-card {
+          background: #1f2937;
+          border-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .step-card {
+          background: white;
+          border-radius: 1rem;
+          padding: 2rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+        }
+        
+        .dark .step-card {
+          background: #1f2937;
+          border-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-card {
+          background: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass-card {
+          background: rgba(30, 41, 59, 0.7);
+          border-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .cta-button {
+          position: relative;
+          background: var(--primary);
+          color: white;
+          padding: 1rem 2rem;
+          border-radius: 0.75rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        
+        .cta-button:hover {
+          background: var(--primary-darker);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .cta-button-large {
+          position: relative;
+          background: var(--primary);
+          color: white;
+          padding: 1.25rem 2.5rem;
+          border-radius: 0.75rem;
+          font-size: 1.125rem;
+          font-weight: 600;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+        }
+        
+        .cta-button-large:hover {
+          background: var(--primary-darker);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .hover-scale {
+          transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+          transform: scale(1.03);
+        }
+        
+        .animate-fade-up {
+          animation: fadeUp 0.5s ease forwards;
+        }
+        
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: white;
+          z-index: 100;
+          transition: all 0.3s ease;
+        }
+        
+        .dark .mobile-menu {
+          background: #111827;
+        }
+        
+        .mobile-menu.hidden {
+          opacity: 0;
+          visibility: hidden;
+        }
+        
+        .mobile-menu.visible {
+          opacity: 1;
+          visibility: visible;
+        }
+        
+        .logo-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          gap: 2rem;
+        }
+        
+        .logo-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: transform 0.3s ease;
+        }
+        
+        .logo-item:hover {
+          transform: translateY(-5px);
+        }
+        
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Custom properties */
+        :root {
+          --primary: #4f46e5;
+          --primary-darker: #4338ca;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// Array of FAQs for the accordion
+const faqs = [
+  {
+    question: "Como a I9 Appify pode ajudar meu negócio?",
+    answer: "A I9 Appify automatiza o atendimento ao cliente via WhatsApp, permitindo respostas rápidas e personalizadas 24/7, liberando sua equipe para tarefas mais estratégicas e melhorando a experiência do cliente."
+  },
+  {
+    question: "Preciso ter conhecimentos técnicos para usar?",
+    answer: "Não. A I9 Appify foi projetada para ser simples e intuitiva. Você não precisa de nenhum conhecimento técnico especial para configurar e começar a usar. Nossa equipe também oferece suporte para ajudá-lo no processo."
+  },
+  {
+    question: "É compatível com meu WhatsApp atual?",
+    answer: "Sim! A I9 Appify é compatível com o WhatsApp Business e pode ser facilmente integrada à sua conta existente sem interromper suas operações atuais."
+  },
+  {
+    question: "Quanto tempo leva para implementar?",
+    answer: "A implementação básica pode ser feita em questão de horas. Para configurações mais personalizadas, podemos levar de 1 a 3 dias, dependendo da complexidade das suas necessidades."
+  },
+  {
+    question: "A I9 Appify é adequada para pequenas empresas?",
+    answer: "Absolutamente! A I9 Appify foi projetada para funcionar bem com empresas de todos os tamanhos, incluindo pequenos negócios que desejam melhorar o atendimento ao cliente sem a necessidade de uma grande equipe."
+  }
+];
+
+export default Index;
