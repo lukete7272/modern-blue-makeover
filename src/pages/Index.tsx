@@ -167,7 +167,7 @@ const Index = () => {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  const handleTestimonialClick = (index) => {
+  const handleTestimonialClick = (index: number) => {
     setActiveTestimonial(index);
   };
 
