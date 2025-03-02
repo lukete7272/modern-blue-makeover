@@ -50,6 +50,13 @@ const TermosServico = () => {
               </div>
 
               <div>
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Sua Conta</h2>
+                <p className="mb-4">
+                  Para usar alguns de nossos Serviços, você pode precisar criar uma conta. Você é responsável por manter a segurança de sua conta e senha. A I9 Appify não pode e não será responsável por qualquer perda ou dano resultante de sua falha em cumprir com os requisitos de segurança.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Privacidade e Proteção de Dados</h2>
                 <p className="mb-4">
                   Nossa <Link to="/politica-privacidade" className="text-primary hover:underline">Política de Privacidade</Link> explica como tratamos seus dados pessoais e protegemos sua privacidade quando você usa nossos Serviços. Ao utilizar nossos Serviços, você concorda que a I9 Appify pode usar esses dados de acordo com nossas políticas de privacidade.
