@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -25,7 +24,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Define data arrays for the different sections
 const highlightItems = [
   { icon: <Zap className="w-6 h-6" />, title: "Automação de Atendimento" },
   { icon: <MessageSquare className="w-6 h-6" />, title: "Mensagens Personalizadas" },
@@ -223,12 +221,10 @@ const Index = () => {
   const [cookieConsentVisible, setCookieConsentVisible] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   
-  // Refs para as seções para animação ao scroll
   const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
-  // Effect para inicializar o dark mode baseado nas preferências do usuário
   useEffect(() => {
     const isDark = localStorage.getItem('darkMode') === 'true' || 
                   (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -240,23 +236,19 @@ const Index = () => {
     }
   }, []);
 
-  // Effect para gerenciar o consentimento de cookies
   useEffect(() => {
     const hasConsent = localStorage.getItem('cookieConsent') === 'accepted';
     setCookieConsentVisible(!hasConsent);
   }, []);
 
-  // Effect para adicionar listeners de scroll
   useEffect(() => {
     const handleScroll = () => {
-      // Atualizar estado de scroll para navbar
       if (window.scrollY > 100) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
       
-      // Calcular progresso de leitura
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
@@ -264,7 +256,6 @@ const Index = () => {
       const percentage = (scrollTop / scrollableHeight) * 100;
       setScrollPercentage(percentage);
       
-      // Adicionar animações ao scroll
       const animateElements = document.querySelectorAll('.animate-on-scroll');
       animateElements.forEach(el => {
         const rect = el.getBoundingClientRect();
@@ -278,7 +269,7 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   const openWhatsApp = () => {
     window.open(`https://wa.me/5531993988889`, '_blank');
   };
@@ -319,14 +310,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative transition-colors duration-300">
-      {/* Barra de Progresso de Leitura */}
       <div 
         className="reading-progress-bar" 
         style={{ transform: `scaleX(${scrollPercentage / 100})` }}
         aria-hidden="true"
       />
 
-      {/* NavBar */}
       <nav className="sticky top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm transition-colors duration-300">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
@@ -348,7 +337,6 @@ const Index = () => {
               </button>
             </div>
             
-            {/* Menu mobile toggle */}
             <div className="md:hidden flex items-center gap-2">
               <button 
                 onClick={toggleDarkMode} 
@@ -369,7 +357,6 @@ const Index = () => {
         </div>
       </nav>
       
-      {/* Mobile menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'visible' : 'hidden'}`}>
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center mb-8">
@@ -416,7 +403,6 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Hero Section - Melhorada */}
       <section className="relative py-24 overflow-hidden blue-gradient">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -457,7 +443,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Destacados do serviço */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             {highlightItems.map((item, index) => (
               <div 
@@ -474,7 +459,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section - Melhorada */}
       <section id="features" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -514,7 +498,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="py-16 blue-gradient relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -528,12 +511,10 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Decorative elements */}
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-blue-100/30 dark:bg-blue-900/20 rounded-full blur-3xl"></div>
       </section>
 
-      {/* App Features Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -597,7 +578,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Section - Ajustada */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -628,7 +608,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Integrations Section */}
       <section id="integrations" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -666,7 +645,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Simple Steps Section - Melhorada */}
       <section id="how-it-works" className="py-20 bg-white dark:bg-gray-900 relative transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -703,11 +681,9 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Decorative elements */}
         <div className="absolute -top-48 -left-48 w-96 h-96 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl opacity-70"></div>
       </section>
 
-      {/* Challenges Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -742,7 +718,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Compare Solutions Section */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -783,7 +758,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Com Accordeon */}
       <section id="faq" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -825,7 +799,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-24 relative bg-gradient-to-r from-primary/90 to-blue-600/90 text-white overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -849,7 +822,6 @@ const Index = () => {
         <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
       </section>
       
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -915,7 +887,7 @@ const Index = () => {
                 <a href="https://www.instagram.com/i9appify" target="_blank" rel="noopener noreferrer" className="mr-4">
                   <span className="sr-only">Instagram</span>
                   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" className="text-gray-400 hover:text-white transition">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.28.073-1.689.073-4.948 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
               </div>
@@ -928,33 +900,29 @@ const Index = () => {
         </div>
       </footer>
       
-      {/* Cookie Consent Banner */}
-      {cookieConsentVisible && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 p-4 shadow-lg border-t border-gray-200 dark:border-gray-700 z-50">
-          <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="text-gray-700 dark:text-gray-300 text-sm">
-              Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.
-            </div>
-            <div className="flex gap-2">
-              <button 
-                onClick={declineCookies}
-                className="px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-              >
-                Recusar
-              </button>
-              <button 
-                onClick={acceptCookies}
-                className="px-4 py-2 text-sm bg-primary text-white rounded-lg hover:bg-primary/90 transition"
-              >
-                Aceitar
-              </button>
-            </div>
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 p-4 shadow-lg border-t border-gray-200 dark:border-gray-700 z-50">
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-gray-700 dark:text-gray-300 text-sm">
+            Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.
+          </div>
+          <div className="flex gap-2">
+            <button 
+              onClick={declineCookies}
+              className="px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+            >
+              Recusar
+            </button>
+            <button 
+              onClick={acceptCookies}
+              className="px-4 py-2 text-sm bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+            >
+              Aceitar
+            </button>
           </div>
         </div>
-      )}
+      </div>
       
-      {/* CSS Global que não está em módulos */}
-      <style jsx="true">{`
+      <style>{`
         .blue-gradient {
           background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
         }
