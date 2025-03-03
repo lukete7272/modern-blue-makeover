@@ -1,4 +1,4 @@
-<lov-code>
+
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -24,6 +24,195 @@ import {
   Layers
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Define data arrays for the different sections
+const highlightItems = [
+  { icon: <Zap className="w-6 h-6" />, title: "Automação de Atendimento" },
+  { icon: <MessageSquare className="w-6 h-6" />, title: "Mensagens Personalizadas" },
+  { icon: <Target className="w-6 h-6" />, title: "Segmentação Inteligente" }
+];
+
+const features = [
+  {
+    icon: <MessageCircle className="w-6 h-6" />,
+    title: "Atendimento Automatizado",
+    description: "Automatize respostas para as perguntas mais frequentes dos seus clientes.",
+    bullets: [
+      "Respostas instantâneas 24/7",
+      "Redução de tempo em questões repetitivas",
+      "Maior satisfação dos clientes"
+    ]
+  },
+  {
+    icon: <Zap className="w-6 h-6" />,
+    title: "Mensagens Personalizadas",
+    description: "Envie mensagens relevantes e personalizadas para cada segmento de cliente.",
+    bullets: [
+      "Comunicação direcionada",
+      "Maior taxa de engajamento",
+      "Experiência personalizada"
+    ]
+  },
+  {
+    icon: <TrendingUp className="w-6 h-6" />,
+    title: "Gestão de Relacionamento",
+    description: "Centralize todas as conversas e histórico de clientes em um único lugar.",
+    bullets: [
+      "Visão completa do cliente",
+      "Histórico de interações",
+      "Aumento da eficiência no atendimento"
+    ]
+  }
+];
+
+const stats = [
+  {
+    value: "70%",
+    label: "Redução de tempo",
+    description: "No atendimento de perguntas frequentes"
+  },
+  {
+    value: "85%",
+    label: "Taxa de satisfação",
+    description: "Dos clientes com respostas automatizadas"
+  },
+  {
+    value: "24/7",
+    label: "Disponibilidade",
+    description: "Seu negócio sempre disponível"
+  }
+];
+
+const appFeatures = [
+  {
+    icon: <MessageSquare className="w-6 h-6" />,
+    title: "Chatbot Inteligente",
+    description: "Automatize respostas para as perguntas mais frequentes e reduza o tempo de atendimento.",
+    benefits: ["Disponibilidade 24/7", "Respostas rápidas e precisas", "Redução da carga de trabalho da equipe"]
+  },
+  {
+    icon: <Target className="w-6 h-6" />,
+    title: "Mensagens Segmentadas",
+    description: "Envie mensagens personalizadas para diferentes grupos de clientes de acordo com perfil ou comportamento.",
+    benefits: ["Aumento de conversão", "Comunicação mais eficiente", "Melhor experiência do cliente"]
+  },
+  {
+    icon: <RefreshCw className="w-6 h-6" />,
+    title: "Automação de Fluxos",
+    description: "Crie fluxos automatizados para conduzir seus clientes pela jornada ideal em cada situação.",
+    benefits: ["Padronização do atendimento", "Escalabilidade do negócio", "Menos erros operacionais"]
+  }
+];
+
+const galleryItems = [
+  {
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
+    title: "Chatbot Personalizado",
+    description: "Atendimento automatizado com personalidade da sua marca"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&q=80",
+    title: "Mensagens Automáticas",
+    description: "Envio programado de informações importantes"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80",
+    title: "Fluxos Interativos",
+    description: "Criação de jornadas automatizadas para os clientes"
+  }
+];
+
+const updatedIntegrations = [
+  { name: "Shopify", logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg" },
+  { name: "Magento", logo: "https://cdn.worldvectorlogo.com/logos/magento.svg" },
+  { name: "WooCommerce", logo: "https://cdn.worldvectorlogo.com/logos/woocommerce.svg" },
+  { name: "Salesforce", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+  { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot.svg" },
+  { name: "Zendesk", logo: "https://cdn.worldvectorlogo.com/logos/zendesk-2.svg" },
+  { name: "Google Sheets", logo: "https://cdn.worldvectorlogo.com/logos/google-sheets-1.svg" },
+  { name: "Instagram", logo: "https://cdn.worldvectorlogo.com/logos/instagram-2016-6.svg" },
+  { name: "WordPress", logo: "https://cdn.worldvectorlogo.com/logos/wordpress-blue.svg" }
+];
+
+const steps = [
+  {
+    title: "Defina seus objetivos",
+    description: "Conversamos para entender suas necessidades específicas e definir a melhor estratégia de automação.",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    title: "Implementação rápida",
+    description: "Configuramos a solução em poucos dias, sem complexidade técnica e com total suporte da nossa equipe.",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    title: "Resultados imediatos",
+    description: "Veja seus processos de atendimento sendo otimizados e a satisfação dos clientes aumentando rapidamente.",
+    image: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+const challenges = [
+  {
+    icon: <Clock className="w-6 h-6" />,
+    title: "Tempo Limitado",
+    description: "Sua equipe não consegue dar conta do volume de mensagens recebidas diariamente.",
+    solution: "Automação de 70% das perguntas frequentes, liberando tempo para questões realmente importantes."
+  },
+  {
+    icon: <Users className="w-6 h-6" />,
+    title: "Equipe Reduzida",
+    description: "Faltam colaboradores para atender a todos os clientes com a velocidade esperada.",
+    solution: "Multiplique sua capacidade de atendimento sem aumentar a equipe, através da tecnologia."
+  },
+  {
+    icon: <AlertCircle className="w-6 h-6" />,
+    title: "Inconsistência",
+    description: "Diferentes atendentes dão informações contraditórias, gerando confusão.",
+    solution: "Padronização das respostas através de fluxos inteligentes e respostas pré-aprovadas."
+  }
+];
+
+const i9Features = [
+  "Integração rápida e sem código",
+  "Personalização completa para sua marca",
+  "Fluxos automatizados personalizáveis",
+  "Suporte técnico dedicado",
+  "Escalabilidade conforme seu crescimento",
+  "Treinamento e onboarding inclusos"
+];
+
+const otherSolutions = [
+  "Necessidade de codificação complexa",
+  "Personalização limitada",
+  "Fluxos rígidos pré-definidos",
+  "Suporte por tickets impessoal",
+  "Custos crescentes por usuário/mensagem",
+  "Onboarding complexo e demorado"
+];
+
+const faqItems = [
+  {
+    question: "Quanto tempo leva para implementar?",
+    answer: "A implementação básica leva de 3 a 5 dias úteis. Soluções mais complexas podem levar até 2 semanas, dependendo das suas necessidades específicas."
+  },
+  {
+    question: "Preciso ter conhecimento técnico?",
+    answer: "Não! Nossa plataforma é projetada para ser fácil de usar, sem necessidade de conhecimentos técnicos. Além disso, oferecemos suporte completo durante todo o processo."
+  },
+  {
+    question: "Vocês oferecem suporte após a implementação?",
+    answer: "Sim, todos os nossos planos incluem suporte contínuo após a implementação. Estamos sempre disponíveis para ajudar com ajustes, otimizações e novas funcionalidades."
+  },
+  {
+    question: "Como é feita a cobrança?",
+    answer: "Trabalhamos com planos mensais ou anuais baseados no volume de mensagens e funcionalidades necessárias. Entre em contato para uma proposta personalizada para seu negócio."
+  },
+  {
+    question: "Posso testar antes de contratar?",
+    answer: "Sim! Oferecemos uma demonstração gratuita para que você possa ver como a plataforma funciona com seus próprios dados e necessidades."
+  }
+];
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -600,4 +789,349 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
             Perguntas Frequentes
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+            Tire suas dúvidas sobre a I9 Appify
+          </p>
+          
+          <div className="max-w-3xl mx-auto space-y-6">
+            {faqItems.map((item, index) => (
+              <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                <button
+                  className="w-full px-6 py-4 flex justify-between items-center bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={activeAccordion === index}
+                >
+                  <span className="font-medium text-left text-gray-900 dark:text-white">
+                    {item.question}
+                  </span>
+                  {activeAccordion === index ? (
+                    <ChevronUp className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                  )}
+                </button>
+                <div 
+                  className={`px-6 overflow-hidden transition-all duration-300 ${
+                    activeAccordion === index ? "max-h-60 py-4" : "max-h-0"
+                  }`}
+                >
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {item.answer}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative bg-gradient-to-r from-primary/90 to-blue-600/90 text-white overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Pronto para transformar seu atendimento?
+            </h2>
+            <p className="text-xl mb-10 text-white/90">
+              Entre em contato agora mesmo e descubra como a I9 Appify pode ajudar seu negócio a crescer.
+            </p>
+            <button 
+              onClick={openWhatsApp}
+              className="bg-white text-primary px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-100 transition duration-300 text-lg font-semibold flex items-center gap-2 mx-auto"
+            >
+              <span>Falar com um consultor</span>
+              <MessageCircle className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5"></div>
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+      </section>
+      
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div>
+              <h3 className="text-xl font-bold mb-4">I9 Appify</h3>
+              <p className="text-gray-400 mb-4">
+                Automação inteligente de WhatsApp para transformar o atendimento do seu negócio.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-medium mb-4">Links Rápidos</h4>
+              <ul className="space-y-2">
+                <li>
+                  <button onClick={() => scrollToSection('features')} className="text-gray-400 hover:text-white transition">
+                    Benefícios
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection('how-it-works')} className="text-gray-400 hover:text-white transition">
+                    Como Funciona
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection('integrations')} className="text-gray-400 hover:text-white transition">
+                    Integrações
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection('faq')} className="text-gray-400 hover:text-white transition">
+                    FAQ
+                  </button>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-medium mb-4">Legal</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/termos-servico" className="text-gray-400 hover:text-white transition">
+                    Termos de Serviço
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/politica-privacidade" className="text-gray-400 hover:text-white transition">
+                    Política de Privacidade
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-medium mb-4">Contato</h4>
+              <button 
+                onClick={openWhatsApp}
+                className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center gap-2 mb-4"
+              >
+                <span>WhatsApp</span>
+                <MessageCircle className="w-4 h-4" />
+              </button>
+              <div className="flex mt-4">
+                <a href="https://www.instagram.com/i9appify" target="_blank" rel="noopener noreferrer" className="mr-4">
+                  <span className="sr-only">Instagram</span>
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" className="text-gray-400 hover:text-white transition">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+            <p>© {new Date().getFullYear()} I9 Appify. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </footer>
+      
+      {/* Cookie Consent Banner */}
+      {cookieConsentVisible && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 p-4 shadow-lg border-t border-gray-200 dark:border-gray-700 z-50">
+          <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-gray-700 dark:text-gray-300 text-sm">
+              Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa política de cookies.
+            </div>
+            <div className="flex gap-2">
+              <button 
+                onClick={declineCookies}
+                className="px-4 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+              >
+                Recusar
+              </button>
+              <button 
+                onClick={acceptCookies}
+                className="px-4 py-2 text-sm bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+              >
+                Aceitar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* CSS Global que não está em módulos */}
+      <style jsx="true">{`
+        .blue-gradient {
+          background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%);
+        }
+        
+        .dark .blue-gradient {
+          background: linear-gradient(135deg, #1e293b 0%, #111827 100%);
+        }
+        
+        .glass-card {
+          background: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass-card {
+          background: rgba(30, 41, 59, 0.7);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature-card {
+          padding: 2rem;
+          border-radius: 1rem;
+          background-color: white;
+          border: 1px solid #f1f5f9;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          transition: all 0.3s ease;
+        }
+        
+        .dark .feature-card {
+          background-color: #1e293b;
+          border: 1px solid #334155;
+        }
+        
+        .feature-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-card {
+          padding: 2rem;
+          border-radius: 1rem;
+          background-color: white;
+          border: 1px solid #f1f5f9;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .dark .step-card {
+          background-color: #1e293b;
+          border: 1px solid #334155;
+        }
+        
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 100;
+          transition: all 0.3s ease;
+        }
+        
+        .dark .mobile-menu {
+          background-color: #1e293b;
+        }
+        
+        .mobile-menu.hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+        
+        .mobile-menu.visible {
+          opacity: 1;
+          pointer-events: all;
+        }
+        
+        .reading-progress-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: var(--color-primary);
+          transform-origin: 0%;
+          z-index: 1000;
+        }
+        
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s ease-out;
+        }
+        
+        .animate-fade-up {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .hover-scale {
+          transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+          transform: scale(1.03);
+        }
+        
+        .logo-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+          .logo-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        
+        .logo-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: transform 0.3s ease;
+        }
+        
+        .logo-item:hover {
+          transform: translateY(-5px);
+        }
+        
+        .cta-button {
+          position: relative;
+          background-color: var(--color-primary);
+          color: white;
+          padding: 1rem 2rem;
+          border-radius: 0.75rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 600;
+        }
+        
+        .cta-button:hover {
+          background-color: var(--color-primary-dark);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bg-grid-pattern {
+          background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+          background-size: 20px 20px;
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+
+        :root {
+          --color-primary: #3b82f6;
+          --color-primary-dark: #2563eb;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Index;
