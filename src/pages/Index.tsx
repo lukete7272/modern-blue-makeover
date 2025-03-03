@@ -1,3 +1,4 @@
+<lov-code>
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -599,4 +600,4 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
             Perguntas Frequentes
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-
