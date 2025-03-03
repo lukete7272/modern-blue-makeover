@@ -124,9 +124,9 @@ const updatedIntegrations = [
   { name: "Google Sheets", logo: "https://cdn.worldvectorlogo.com/logos/google-sheets-1.svg" },
   { name: "Google Drive", logo: "https://cdn.worldvectorlogo.com/logos/google-drive.svg" },
   { name: "Google Calendar", logo: "https://cdn.worldvectorlogo.com/logos/google-calendar-icon.svg" },
-  { name: "Google Meet", logo: "https://cdn.worldvectorlogo.com/logos/google-meet.svg" },
+  { name: "Gmail", logo: "https://cdn.worldvectorlogo.com/logos/gmail-icon-2.svg" },
   { name: "Supabase", logo: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" },
-  { name: "Google Analytics", logo: "https://cdn.worldvectorlogo.com/logos/google-analytics-4.svg" }
+  { name: "Google Docs", logo: "https://cdn.worldvectorlogo.com/logos/google-docs-2020-icon.svg" }
 ];
 
 const steps = [
@@ -181,8 +181,7 @@ const otherSolutions = [
   "Personalização limitada",
   "Fluxos rígidos pré-definidos",
   "Suporte por tickets impessoal",
-  "Custos crescentes por usuário/mensagem",
-  "Onboarding complexo e demorado"
+  "Custos crescentes por usuário/mensagem"
 ];
 
 const faqItems = [
