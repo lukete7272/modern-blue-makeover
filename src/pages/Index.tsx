@@ -121,12 +121,12 @@ const galleryItems = [
 ];
 
 const updatedIntegrations = [
-  { name: "Google Sheets", logo: "https://cdn.worldvectorlogo.com/logos/google-sheets-1.svg" },
+  { name: "Google Sheets", logo: "https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Sheets_logo_%282014-2020%29.svg" },
   { name: "Google Drive", logo: "https://cdn.worldvectorlogo.com/logos/google-drive.svg" },
-  { name: "Google Calendar", logo: "https://cdn.worldvectorlogo.com/logos/google-calendar-icon.svg" },
+  { name: "Google Calendar", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" },
   { name: "Gmail", logo: "https://cdn.worldvectorlogo.com/logos/gmail-icon-2.svg" },
   { name: "Supabase", logo: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" },
-  { name: "Google Docs", logo: "https://cdn.worldvectorlogo.com/logos/google-docs-2020-icon.svg" }
+  { name: "Google Docs", logo: "https://upload.wikimedia.org/wikipedia/commons/0/01/Google_Docs_logo_%282014-2020%29.svg" }
 ];
 
 const steps = [
@@ -431,7 +431,7 @@ const Index = () => {
             </div>
             <div className="w-full lg:w-1/2 animate-fade-up animate-float" style={{ animationDelay: "0.2s" }}>
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
                 alt="Automação de WhatsApp Business"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 transform hover:scale-[1.02]"
               />
