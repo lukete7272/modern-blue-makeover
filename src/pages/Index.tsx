@@ -20,7 +20,9 @@ import {
   RefreshCw,
   PieChart,
   AlertCircle,
-  Layers
+  Layers,
+  Info,
+  DollarSign
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -187,7 +189,7 @@ const otherSolutions = [
 const faqItems = [
   {
     question: "Quanto tempo leva para implementar?",
-    answer: "A implementação básica leva de 3 a 5 dias úteis. Soluções mais complexas podem levar até 2 semanas, dependendo das suas necessidades específicas."
+    answer: "A implementação básica leva de 3 a 7 dias úteis. Soluções mais complexas podem levar até 2 semanas, dependendo das suas necessidades específicas."
   },
   {
     question: "Preciso ter conhecimento técnico?",
@@ -204,6 +206,18 @@ const faqItems = [
   {
     question: "Posso testar antes de contratar?",
     answer: "Sim! Oferecemos uma demonstração gratuita para que você possa ver como a plataforma funciona com seus próprios dados e necessidades."
+  },
+  {
+    question: "O que inclui o Suporte Técnico?",
+    answer: "O Suporte Técnico resolve problemas críticos que impedem o funcionamento do agente ou integrações. Exemplos: queda do agente, falha em integrações, bloqueio de acesso ao painel, erros na coleta de dados e bugs recorrentes. Nosso SLA garante resposta em até 24 horas (6 horas para plano PRO) e solução em até 48 horas após diagnóstico. O suporte técnico está incluso em todos os planos."
+  },
+  {
+    question: "O que são Ajustes e como funcionam?",
+    answer: "Ajustes são modificações não críticas no fluxo, conteúdo ou configurações do agente. Exemplos: atualizar promoções, corrigir respostas automáticas, personalizar o tom de comunicação, modificar horários de funcionamento ou alterar menus interativos. Cada plano inclui um número específico de ajustes: Essential (2 ajustes, R$150/hora adicional), Completo (5 ajustes, R$150/hora ou Pacote Ouro R$800/10 ajustes) e PRO (8 ajustes, R$150/hora adicional). Os ajustes são entregues em até 72 horas."
+  },
+  {
+    question: "Qual a diferença entre Suporte Técnico e Ajustes?",
+    answer: "O Suporte Técnico resolve problemas críticos (como 'O agente parou de coletar leads') com resposta em 24h e solução em 48h, e está incluso em todos os planos. Já os Ajustes atualizam conteúdo ou fluxo (como 'Quero mudar a resposta de boas-vindas'), têm quantidade limitada por plano com cobrança avulsa para extras, e são entregues em até 72 horas."
   }
 ];
 
@@ -594,7 +608,7 @@ const Index = () => {
                   />
                 </div>
                 <div className="p-6 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-center text-gray-900 dark:text-white mb-2">{item.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">{item.description}</p>
                 </div>
               </div>
@@ -832,7 +846,7 @@ const Index = () => {
               <ul className="space-y-2">
                 <li>
                   <button onClick={() => scrollToSection('features')} className="text-gray-400 hover:text-white transition">
-                    Benefícios
+                    Benef��cios
                   </button>
                 </li>
                 <li>
