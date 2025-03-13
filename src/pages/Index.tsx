@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -309,7 +308,6 @@ const Index = () => {
         aria-hidden="true"
       />
 
-      {/* Navigation */}
       <nav className="sticky top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm transition-colors duration-300">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
@@ -352,7 +350,6 @@ const Index = () => {
         </div>
       </nav>
       
-      {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'visible' : 'hidden'}`}>
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center mb-8">
@@ -405,11 +402,10 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Hero Section */}
       <section className="relative py-24 overflow-hidden blue-gradient">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate-fade-up">
+          <div className="flex flex-col lg:flex-row items-center justify-center">
+            <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate-fade-up text-center lg:text-left">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
                 Conecte sua empresa com{" "}
                 <span className="text-primary bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
@@ -419,7 +415,7 @@ const Index = () => {
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 Automatize seu atendimento e transforme a experiência dos seus clientes com soluções inovadoras de WhatsApp Business.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button 
                   onClick={openWhatsApp}
                   className="cta-button group text-lg"
@@ -437,7 +433,7 @@ const Index = () => {
                 </button>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 animate-fade-up animate-float" style={{ animationDelay: "0.2s" }}>
+            <div className="w-full lg:w-1/2 animate-fade-up animate-float flex justify-center" style={{ animationDelay: "0.2s" }}>
               <img
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
                 alt="Automação de WhatsApp Business"
@@ -446,13 +442,13 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16 max-w-4xl mx-auto">
             {highlightItems.map((item, index) => (
               <div 
                 key={index} 
                 className="bg-white/70 dark:bg-gray-800/50 backdrop-blur-sm p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-white/80 dark:border-gray-700/50"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center">
                   <div className="text-primary">{item.icon}</div>
                   <h3 className="font-semibold text-gray-800 dark:text-gray-200">{item.title}</h3>
                 </div>
@@ -462,7 +458,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -473,7 +468,7 @@ const Index = () => {
             Nossas soluções oferecem benefícios reais para seu negócio, transformando a experiência de atendimento ao cliente de forma completa.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -481,11 +476,11 @@ const Index = () => {
                 className="feature-card animate-on-scroll"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-2xl flex items-center justify-center mb-6 text-primary">
+                <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-2xl flex items-center justify-center mb-6 text-primary mx-auto">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">{feature.description}</p>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 text-center">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4 text-center">{feature.description}</p>
                 <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
                   <ul className="space-y-2">
                     {feature.bullets.map((bullet, idx) => (
@@ -502,10 +497,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="py-16 blue-gradient relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center p-6 glass-card rounded-xl hover-scale">
                 <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
@@ -520,7 +514,6 @@ const Index = () => {
         <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-blue-100/30 dark:bg-blue-900/20 rounded-full blur-3xl"></div>
       </section>
 
-      {/* App Features Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -584,7 +577,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -615,8 +607,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Integrations Section */}
-      <section id="integrations" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
             Integrações Disponíveis
@@ -640,7 +631,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
       <section id="how-it-works" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -678,7 +668,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Challenges Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -712,7 +701,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Comparison Section */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -756,7 +744,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section id="faq" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -790,7 +777,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 bg-primary/10 dark:bg-primary/20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
@@ -810,16 +796,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-12 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="footer-heading">I9 Appify</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-4">
                 Soluções inteligentes para automatizar seu atendimento e otimizar seus processos.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center md:justify-start">
                 <a href="#" className="footer-link">
                   <span className="sr-only">Facebook</span>
                   {/* Facebook icon */}
@@ -835,7 +820,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="footer-section">
+            <div className="footer-section text-center md:text-left">
               <h3 className="footer-heading">Navegação</h3>
               <button onClick={() => scrollToSection('features')} className="footer-link">Benefícios</button>
               <button onClick={() => scrollToSection('how-it-works')} className="footer-link">Como Funciona</button>
@@ -844,20 +829,20 @@ const Index = () => {
               <Link to="/sobre-nos" className="footer-link">Quem Somos</Link>
             </div>
             
-            <div className="footer-section">
+            <div className="footer-section text-center md:text-left">
               <h3 className="footer-heading">Legal</h3>
               <Link to="/termos-servico" className="footer-link">Termos de Serviço</Link>
               <Link to="/politica-privacidade" className="footer-link">Política de Privacidade</Link>
             </div>
             
-            <div className="footer-section">
+            <div className="footer-section text-center md:text-left">
               <h3 className="footer-heading">Contato</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-2">
                 contato@i9appify.com.br
               </p>
               <button 
                 onClick={openWhatsApp}
-                className="bg-primary/10 text-primary px-4 py-2 rounded-lg hover:bg-primary/20 transition mt-2"
+                className="bg-primary/10 text-primary px-4 py-2 rounded-lg hover:bg-primary/20 transition mt-2 mx-auto md:mx-0"
               >
                 Fale Conosco
               </button>
@@ -872,36 +857,33 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Cookie Consent */}
-      {cookieConsentVisible && (
-        <div className="cookie-consent visible">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Utilizamos cookies</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Este site utiliza cookies para melhorar sua experiência de navegação. 
-                  Ao continuar, você concorda com nossa política de privacidade.
-                </p>
-              </div>
-              <div className="flex gap-3">
-                <button 
-                  onClick={declineCookies}
-                  className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-                >
-                  Recusar
-                </button>
-                <button 
-                  onClick={acceptCookies}
-                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
-                >
-                  Aceitar
-                </button>
-              </div>
+      <div className="cookie-consent visible">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Utilizamos cookies</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Este site utiliza cookies para melhorar sua experiência de navegação. 
+                Ao continuar, você concorda com nossa política de privacidade.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <button 
+                onClick={declineCookies}
+                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+              >
+                Recusar
+              </button>
+              <button 
+                onClick={acceptCookies}
+                className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+              >
+                Aceitar
+              </button>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
