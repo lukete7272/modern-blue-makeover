@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -308,6 +309,7 @@ const Index = () => {
         aria-hidden="true"
       />
 
+      {/* Navigation */}
       <nav className="sticky top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm transition-colors duration-300">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
@@ -350,6 +352,7 @@ const Index = () => {
         </div>
       </nav>
       
+      {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'visible' : 'hidden'}`}>
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center mb-8">
@@ -402,6 +405,7 @@ const Index = () => {
         </div>
       </div>
       
+      {/* Hero Section */}
       <section className="relative py-24 overflow-hidden blue-gradient">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -458,6 +462,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Features Section */}
       <section id="features" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -497,6 +502,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
       <section className="py-16 blue-gradient relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -514,6 +520,7 @@ const Index = () => {
         <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-blue-100/30 dark:bg-blue-900/20 rounded-full blur-3xl"></div>
       </section>
 
+      {/* App Features Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -577,6 +584,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
@@ -607,6 +615,295 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Integrations Section */}
       <section id="integrations" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Integrações Disponíveis
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+            Conecte com suas ferramentas favoritas para uma experiência completa
+          </p>
+          
+          <div className="logo-grid max-w-4xl mx-auto">
+            {updatedIntegrations.map((integration, index) => (
+              <div key={index} className="logo-item">
+                <img 
+                  src={integration.logo} 
+                  alt={`Logo ${integration.name}`} 
+                  className="h-12 w-auto object-contain"
+                />
+                <p className="text-center text-sm mt-2 text-gray-600 dark:text-gray-400">{integration.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Como Funciona
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+            Processo simples e rápido para você começar a automatizar seu atendimento
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {steps.map((step, index) => (
+              <div 
+                key={index}
+                ref={el => stepRefs.current[index] = el}
+                className="step-card animate-on-scroll"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <div className="mb-6 relative">
+                  <div className="absolute top-0 left-0 w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold">
+                    {index + 1}
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{step.description}</p>
+                <div className="mt-6 rounded-xl overflow-hidden">
+                  <img 
+                    src={step.image} 
+                    alt={step.title}
+                    className="w-full h-40 object-cover transition-transform hover:scale-105 duration-500"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges Section */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Desafios que Resolvemos
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+            Problemas comuns das empresas que nossa solução resolve
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {challenges.map((challenge, index) => (
+              <div 
+                key={index}
+                className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 animate-on-scroll"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-12 h-12 bg-red-500/10 dark:bg-red-500/20 rounded-full flex items-center justify-center mb-6 text-red-500">
+                  {challenge.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">{challenge.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">{challenge.description}</p>
+                <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">{challenge.solution}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Por que escolher a I9 Appify?
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+            Veja como nos destacamos em relação a outras soluções
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="bg-primary/5 dark:bg-primary/10 p-8 rounded-xl">
+              <h3 className="text-xl font-semibold mb-6 text-center text-gray-900 dark:text-white flex items-center justify-center gap-2">
+                <Check className="w-6 h-6 text-primary" />
+                <span>I9 Appify</span>
+              </h3>
+              <ul className="space-y-4">
+                {i9Features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl">
+              <h3 className="text-xl font-semibold mb-6 text-center text-gray-900 dark:text-white flex items-center justify-center gap-2">
+                <X className="w-6 h-6 text-red-500" />
+                <span>Outras Soluções</span>
+              </h3>
+              <ul className="space-y-4">
+                {otherSolutions.map((solution, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <X className="w-5 h-5 text-red-500 flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300">{solution}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+            Perguntas Frequentes
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto mb-16">
+            Respostas para as dúvidas mais comuns
+          </p>
+          
+          <div className="max-w-3xl mx-auto">
+            {faqItems.map((item, index) => (
+              <div key={index} className="faq-accordion-item">
+                <button 
+                  className="faq-accordion-trigger"
+                  onClick={() => toggleAccordion(index)}
+                  aria-expanded={activeAccordion === index}
+                >
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">{item.question}</h3>
+                  {activeAccordion === index ? (
+                    <ChevronUp className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  )}
+                </button>
+                <div className={`faq-accordion-content px-2 pb-4 text-gray-600 dark:text-gray-300 ${activeAccordion === index ? 'open' : ''}`}>
+                  <p>{item.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary/10 dark:bg-primary/20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            Pronto para transformar seu atendimento?
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            Entre em contato agora e descubra como a I9 Appify pode ajudar seu negócio a crescer com atendimento automatizado.
+          </p>
+          <button 
+            onClick={openWhatsApp}
+            className="group bg-primary text-white px-8 py-4 rounded-xl shadow-lg hover:bg-primary/90 hover:scale-105 transition duration-300 text-lg font-semibold flex items-center gap-2 mx-auto"
+          >
+            <span>Fale com um especialista</span>
+            <MessageCircle className="w-5 h-5" />
+            <span className="text-xs bg-white/20 px-2 py-0.5 rounded absolute -top-2 right-0 opacity-0 group-hover:opacity-100 transition-opacity">Via WhatsApp</span>
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="footer-heading">I9 Appify</h3>
+              <p className="text-gray-500 dark:text-gray-400 mb-4">
+                Soluções inteligentes para automatizar seu atendimento e otimizar seus processos.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="footer-link">
+                  <span className="sr-only">Facebook</span>
+                  {/* Facebook icon */}
+                </a>
+                <a href="#" className="footer-link">
+                  <span className="sr-only">Instagram</span>
+                  {/* Instagram icon */}
+                </a>
+                <a href="#" className="footer-link">
+                  <span className="sr-only">LinkedIn</span>
+                  {/* LinkedIn icon */}
+                </a>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h3 className="footer-heading">Navegação</h3>
+              <button onClick={() => scrollToSection('features')} className="footer-link">Benefícios</button>
+              <button onClick={() => scrollToSection('how-it-works')} className="footer-link">Como Funciona</button>
+              <button onClick={() => scrollToSection('integrations')} className="footer-link">Integrações</button>
+              <button onClick={() => scrollToSection('faq')} className="footer-link">FAQ</button>
+              <Link to="/sobre-nos" className="footer-link">Quem Somos</Link>
+            </div>
+            
+            <div className="footer-section">
+              <h3 className="footer-heading">Legal</h3>
+              <Link to="/termos-servico" className="footer-link">Termos de Serviço</Link>
+              <Link to="/politica-privacidade" className="footer-link">Política de Privacidade</Link>
+            </div>
+            
+            <div className="footer-section">
+              <h3 className="footer-heading">Contato</h3>
+              <p className="text-gray-500 dark:text-gray-400 mb-2">
+                contato@i9appify.com.br
+              </p>
+              <button 
+                onClick={openWhatsApp}
+                className="bg-primary/10 text-primary px-4 py-2 rounded-lg hover:bg-primary/20 transition mt-2"
+              >
+                Fale Conosco
+              </button>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-100 dark:border-gray-800 mt-8 pt-8 text-center">
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
+              &copy; {new Date().getFullYear()} I9 Appify. Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Cookie Consent */}
+      {cookieConsentVisible && (
+        <div className="cookie-consent visible">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">Utilizamos cookies</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  Este site utiliza cookies para melhorar sua experiência de navegação. 
+                  Ao continuar, você concorda com nossa política de privacidade.
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <button 
+                  onClick={declineCookies}
+                  className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                >
+                  Recusar
+                </button>
+                <button 
+                  onClick={acceptCookies}
+                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition"
+                >
+                  Aceitar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Index;
