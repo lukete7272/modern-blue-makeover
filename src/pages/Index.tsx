@@ -468,23 +468,23 @@ const Index = () => {
             Nossas soluções oferecem benefícios reais para seu negócio, transformando a experiência de atendimento ao cliente de forma completa.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
             {features.map((feature, index) => (
               <div
                 key={index}
                 ref={el => featureRefs.current[index] = el}
-                className="feature-card animate-on-scroll"
+                className="feature-card animate-on-scroll text-center"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-2xl flex items-center justify-center mb-6 text-primary mx-auto">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 text-center">{feature.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4 text-center">{feature.description}</p>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">{feature.description}</p>
                 <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
                   <ul className="space-y-2">
                     {feature.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
+                      <li key={idx} className="flex items-start gap-2 justify-center">
                         <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700 dark:text-gray-300 text-sm">{bullet}</span>
                       </li>
@@ -755,9 +755,9 @@ const Index = () => {
           
           <div className="max-w-3xl mx-auto">
             {faqItems.map((item, index) => (
-              <div key={index} className="faq-accordion-item">
+              <div key={index} className="faq-accordion-item bg-white dark:bg-gray-800 rounded-lg mb-4 overflow-hidden">
                 <button 
-                  className="faq-accordion-trigger"
+                  className="faq-accordion-trigger w-full py-4 px-6 text-left flex justify-between items-center"
                   onClick={() => toggleAccordion(index)}
                   aria-expanded={activeAccordion === index}
                 >
@@ -768,7 +768,7 @@ const Index = () => {
                     <ChevronDown className="w-5 h-5 text-gray-700 dark:text-gray-300" />
                   )}
                 </button>
-                <div className={`faq-accordion-content px-2 pb-4 text-gray-600 dark:text-gray-300 ${activeAccordion === index ? 'open' : ''}`}>
+                <div className={`faq-accordion-content px-6 pb-6 text-gray-600 dark:text-gray-300 ${activeAccordion === index ? 'open' : ''}`}>
                   <p>{item.answer}</p>
                 </div>
               </div>
@@ -798,9 +798,9 @@ const Index = () => {
 
       <footer className="py-12 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="footer-heading">I9 Appify</h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            <div>
+              <h3 className="footer-heading text-center md:text-left">I9 Appify</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-4">
                 Soluções inteligentes para automatizar seu atendimento e otimizar seus processos.
               </p>
@@ -820,32 +820,38 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="footer-section text-center md:text-left">
-              <h3 className="footer-heading">Navegação</h3>
-              <button onClick={() => scrollToSection('features')} className="footer-link">Benefícios</button>
-              <button onClick={() => scrollToSection('how-it-works')} className="footer-link">Como Funciona</button>
-              <button onClick={() => scrollToSection('integrations')} className="footer-link">Integrações</button>
-              <button onClick={() => scrollToSection('faq')} className="footer-link">FAQ</button>
-              <Link to="/sobre-nos" className="footer-link">Quem Somos</Link>
+            <div className="footer-section">
+              <h3 className="footer-heading text-center md:text-left">Navegação</h3>
+              <div className="flex flex-col items-center md:items-start">
+                <button onClick={() => scrollToSection('features')} className="footer-link">Benefícios</button>
+                <button onClick={() => scrollToSection('how-it-works')} className="footer-link">Como Funciona</button>
+                <button onClick={() => scrollToSection('integrations')} className="footer-link">Integrações</button>
+                <button onClick={() => scrollToSection('faq')} className="footer-link">FAQ</button>
+                <Link to="/sobre-nos" className="footer-link">Quem Somos</Link>
+              </div>
             </div>
             
-            <div className="footer-section text-center md:text-left">
-              <h3 className="footer-heading">Legal</h3>
-              <Link to="/termos-servico" className="footer-link">Termos de Serviço</Link>
-              <Link to="/politica-privacidade" className="footer-link">Política de Privacidade</Link>
+            <div className="footer-section">
+              <h3 className="footer-heading text-center md:text-left">Legal</h3>
+              <div className="flex flex-col items-center md:items-start">
+                <Link to="/termos-servico" className="footer-link">Termos de Serviço</Link>
+                <Link to="/politica-privacidade" className="footer-link">Política de Privacidade</Link>
+              </div>
             </div>
             
-            <div className="footer-section text-center md:text-left">
-              <h3 className="footer-heading">Contato</h3>
-              <p className="text-gray-500 dark:text-gray-400 mb-2">
+            <div className="footer-section">
+              <h3 className="footer-heading text-center md:text-left">Contato</h3>
+              <p className="text-gray-500 dark:text-gray-400 mb-2 text-center md:text-left">
                 contato@i9appify.com.br
               </p>
-              <button 
-                onClick={openWhatsApp}
-                className="bg-primary/10 text-primary px-4 py-2 rounded-lg hover:bg-primary/20 transition mt-2 mx-auto md:mx-0"
-              >
-                Fale Conosco
-              </button>
+              <div className="flex justify-center md:justify-start">
+                <button 
+                  onClick={openWhatsApp}
+                  className="bg-primary/10 text-primary px-4 py-2 rounded-lg hover:bg-primary/20 transition mt-2"
+                >
+                  Fale Conosco
+                </button>
+              </div>
             </div>
           </div>
           
@@ -857,7 +863,7 @@ const Index = () => {
         </div>
       </footer>
 
-      <div className="cookie-consent visible">
+      <div className={`cookie-consent ${cookieConsentVisible ? 'visible' : 'hidden'}`}>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
