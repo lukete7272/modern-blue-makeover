@@ -64,6 +64,22 @@ const TermosServico = () => {
               </div>
 
               <div>
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Suporte Técnico e Ajustes</h2>
+                <p className="mb-4">
+                  Nosso Suporte Técnico resolve problemas críticos que impedem o funcionamento do agente ou integrações. Exemplos incluem: queda do agente, falha em integrações, bloqueio de acesso ao painel, erros na coleta de dados e bugs recorrentes.
+                </p>
+                <p className="mb-4">
+                  Nosso SLA garante resposta em até 24 horas (6 horas para plano PRO) e solução em até 48 horas após diagnóstico. O suporte técnico está incluso em todos os planos.
+                </p>
+                <p className="mb-4">
+                  Ajustes são modificações não críticas no fluxo, conteúdo ou configurações do agente. Exemplos incluem: atualizar promoções, corrigir respostas automáticas, personalizar o tom de comunicação, modificar horários de funcionamento ou alterar menus interativos.
+                </p>
+                <p className="mb-4">
+                  Cada plano inclui um número específico de ajustes: Essential (2 ajustes, R$150/hora adicional), Completo (5 ajustes, R$150/hora ou Pacote Ouro R$800/10 ajustes) e PRO (8 ajustes, R$150/hora adicional). Os ajustes são entregues em até 72 horas.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <AlertCircle className="w-6 h-6 mr-2 text-primary" />
                   Modificações nos Serviços
