@@ -197,7 +197,7 @@ const faqItems = [
   },
   {
     question: "Vocês oferecem suporte após a implementação?",
-    answer: "Sim, todos os nossos planos incluem suporte contínuo após a implementação. Estamos sempre disponíveis para ajudar com ajustes, otimizações e novas funcionalidades."
+    answer: "Sim, todos os nossos planos incluem suporte técnico após a implementação. Cada pacote tem seu número específico de ajustes inclusos por mês. Entre em contato para conhecer os detalhes do plano mais adequado para seu negócio."
   },
   {
     question: "Como é feita a cobrança?",
