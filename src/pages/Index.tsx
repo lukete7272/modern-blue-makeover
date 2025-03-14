@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -184,7 +185,7 @@ const faqItems = [
   },
   {
     question: "Posso testar antes de contratar?",
-    answer: "Sim! Oferecemos uma demonstração gratuita para que você possa ver como a plataforma funciona com seus próprios dados e necessidades."
+    answer: "Sim! Oferecemos uma demonstração gratuita para que você possa ver como a plataforma funciona."
   }
 ];
 
