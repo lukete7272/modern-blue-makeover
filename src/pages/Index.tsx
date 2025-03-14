@@ -23,9 +23,7 @@ import {
   Layers,
   Info,
   DollarSign,
-  Facebook,
   Instagram,
-  Linkedin,
   ArrowUp
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -815,14 +813,8 @@ const Index = () => {
                 Soluções inteligentes para automatizar seu atendimento e otimizar seus processos.
               </p>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a href="#" className="footer-social-link" aria-label="Facebook">
-                  <Facebook className="w-5 h-5" />
-                </a>
                 <a href="#" className="footer-social-link" aria-label="Instagram">
                   <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="footer-social-link" aria-label="LinkedIn">
-                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -898,7 +890,7 @@ const Index = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .blue-gradient {
           background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0.1) 100%);
         }
