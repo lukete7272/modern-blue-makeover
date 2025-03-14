@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { 
   MessageCircle, 
@@ -827,7 +826,7 @@ const Index = () => {
             <div className="footer-section">
               <h3 className="footer-heading text-center md:text-left">Contato</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-2 text-center md:text-left">
-                contato@i9appify.com.br
+                contato@i9appify.com
               </p>
               <div className="flex justify-center md:justify-start">
                 <button 
