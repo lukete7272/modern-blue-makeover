@@ -75,7 +75,7 @@ const TermosServico = () => {
                   Ajustes são modificações não críticas no fluxo, conteúdo ou configurações do agente. Exemplos incluem: atualizar promoções, corrigir respostas automáticas, personalizar o tom de comunicação, modificar horários de funcionamento ou alterar menus interativos.
                 </p>
                 <p className="mb-4">
-                  Cada plano inclui um número específico de ajustes: Essential (2 ajustes, R$150/hora adicional), Completo (5 ajustes, R$150/hora ou Pacote Ouro R$800/10 ajustes) e PRO (8 ajustes, R$150/hora adicional). Os ajustes são entregues em até 72 horas.
+                  Cada plano inclui um número específico de ajustes: Essential (2 ajustes, R$150/hora adicional), Completo (5 ajustes, R$150/hora) e PRO (8 ajustes, R$150/hora adicional). Os ajustes são entregues em até 72 horas.
                 </p>
               </div>
 

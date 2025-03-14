@@ -179,28 +179,12 @@ const faqItems = [
     answer: "Não! Nossa plataforma é projetada para ser fácil de usar, sem necessidade de conhecimentos técnicos. Além disso, oferecemos suporte completo durante todo o processo."
   },
   {
-    question: "Vocês oferecem suporte após a implementação?",
-    answer: "Sim, todos os nossos planos incluem suporte técnico após a implementação. Cada pacote tem seu número específico de ajustes inclusos por mês. Entre em contato para conhecer os detalhes do plano mais adequado para seu negócio."
-  },
-  {
     question: "Como é feita a cobrança?",
     answer: "Trabalhamos com planos mensais ou anuais baseados no volume de mensagens e funcionalidades necessárias. Entre em contato para uma proposta personalizada para seu negócio."
   },
   {
     question: "Posso testar antes de contratar?",
     answer: "Sim! Oferecemos uma demonstração gratuita para que você possa ver como a plataforma funciona com seus próprios dados e necessidades."
-  },
-  {
-    question: "O que inclui o Suporte Técnico?",
-    answer: "O Suporte Técnico resolve problemas críticos que impedem o funcionamento do agente ou integrações. Exemplos: queda do agente, falha em integrações, bloqueio de acesso ao painel, erros na coleta de dados e bugs recorrentes. Nosso SLA garante resposta em até 24 horas (6 horas para plano PRO) e solução em até 48 horas após diagnóstico. O suporte técnico está incluso em todos os planos."
-  },
-  {
-    question: "O que são Ajustes e como funcionam?",
-    answer: "Ajustes são modificações não críticas no fluxo, conteúdo ou configurações do agente. Exemplos: atualizar promoções, corrigir respostas automáticas, personalizar o tom de comunicação, modificar horários de funcionamento ou alterar menus interativos. Cada plano inclui um número específico de ajustes: Essential (2 ajustes, R$150/hora adicional), Completo (5 ajustes, R$150/hora ou Pacote Ouro R$800/10 ajustes) e PRO (8 ajustes, R$150/hora adicional). Os ajustes são entregues em até 72 horas."
-  },
-  {
-    question: "Qual a diferença entre Suporte Técnico e Ajustes?",
-    answer: "O Suporte Técnico resolve problemas críticos (como 'O agente parou de coletar leads') com resposta em 24h e solução em 48h, e está incluso em todos os planos. Já os Ajustes atualizam conteúdo ou fluxo (como 'Quero mudar a resposta de boas-vindas'), têm quantidade limitada por plano com cobrança avulsa para extras, e são entregues em até 72 horas."
   }
 ];
 
