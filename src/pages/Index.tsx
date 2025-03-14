@@ -22,7 +22,11 @@ import {
   AlertCircle,
   Layers,
   Info,
-  DollarSign
+  DollarSign,
+  Facebook,
+  Instagram,
+  Linkedin,
+  ArrowUp
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -196,6 +200,7 @@ const Index = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [cookieConsentVisible, setCookieConsentVisible] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   
   const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -223,6 +228,12 @@ const Index = () => {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+      }
+      
+      if (window.scrollY > 500) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
       }
       
       const windowHeight = window.innerHeight;
@@ -258,6 +269,13 @@ const Index = () => {
     setMobileMenuOpen(false);
   };
   
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   const toggleAccordion = (index: number) => {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
@@ -291,6 +309,14 @@ const Index = () => {
         style={{ transform: `scaleX(${scrollPercentage / 100})` }}
         aria-hidden="true"
       />
+
+      <button 
+        onClick={scrollToTop} 
+        className={`back-to-top ${showScrollTop ? 'visible' : 'hidden'}`}
+        aria-label="Voltar ao topo"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
 
       <nav className="sticky top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm transition-colors duration-300">
         <div className="container mx-auto px-4 py-3">
@@ -582,7 +608,7 @@ const Index = () => {
                   />
                 </div>
                 <div className="p-6 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
-                  <h3 className="text-lg font-semibold text-center text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-center text-gray-900 dark:text-white">{item.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">{item.description}</p>
                 </div>
               </div>
@@ -739,7 +765,7 @@ const Index = () => {
           
           <div className="max-w-3xl mx-auto">
             {faqItems.map((item, index) => (
-              <div key={index} className="faq-accordion-item bg-white dark:bg-gray-800 rounded-lg mb-4 overflow-hidden">
+              <div key={index} className="faq-accordion-item bg-white dark:bg-gray-800 rounded-lg mb-4 overflow-hidden hover:shadow-md transition-shadow duration-300">
                 <button 
                   className="faq-accordion-trigger w-full py-4 px-6 text-left flex justify-between items-center"
                   onClick={() => toggleAccordion(index)}
@@ -789,17 +815,14 @@ const Index = () => {
                 Soluções inteligentes para automatizar seu atendimento e otimizar seus processos.
               </p>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a href="#" className="footer-link">
-                  <span className="sr-only">Facebook</span>
-                  {/* Facebook icon */}
+                <a href="#" className="footer-social-link" aria-label="Facebook">
+                  <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="footer-link">
-                  <span className="sr-only">Instagram</span>
-                  {/* Instagram icon */}
+                <a href="#" className="footer-social-link" aria-label="Instagram">
+                  <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="footer-link">
-                  <span className="sr-only">LinkedIn</span>
-                  {/* LinkedIn icon */}
+                <a href="#" className="footer-social-link" aria-label="LinkedIn">
+                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -874,6 +897,330 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .blue-gradient {
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0.1) 100%);
+        }
+        
+        .reading-progress-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 3px;
+          background: #3b82f6;
+          z-index: 100;
+          width: 100%;
+          transform-origin: left;
+        }
+        
+        .cta-button {
+          position: relative;
+          padding: 1rem 2rem;
+          background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+          color: white;
+          border-radius: 0.75rem;
+          font-weight: 600;
+          box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+        
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: white;
+          z-index: 1000;
+          transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+        
+        .mobile-menu.visible {
+          opacity: 1;
+          pointer-events: all;
+        }
+        
+        .dark .mobile-menu {
+          background: #111827;
+        }
+        
+        .glass-card {
+          background: rgba(255, 255, 255, 0.8);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+        
+        .dark .glass-card {
+          background: rgba(17, 24, 39, 0.8);
+          border: 1px solid rgba(31, 41, 55, 0.5);
+        }
+        
+        .hover-scale {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .hover-scale:hover {
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+          .logo-grid {
+            grid-template-columns: repeat(6, 1fr);
+          }
+        }
+        
+        .logo-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem;
+          background: white;
+          border-radius: 1rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+        
+        .logo-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .logo-item {
+          background: #1f2937;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark .logo-item:hover {
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+        }
+        
+        .feature-card {
+          background: white;
+          border-radius: 1rem;
+          padding: 2rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          border: 1px solid rgba(243, 244, 246, 1);
+        }
+        
+        .feature-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .feature-card {
+          background: #1f2937;
+          border: 1px solid rgba(31, 41, 55, 0.5);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark .feature-card:hover {
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+        
+        .step-card {
+          background: white;
+          border-radius: 1rem;
+          padding: 1.5rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          border: 1px solid rgba(243, 244, 246, 1);
+          position: relative;
+        }
+        
+        .dark .step-card {
+          background: #1f2937;
+          border: 1px solid rgba(31, 41, 55, 0.5);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        
+        .step-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .step-card:hover {
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+        }
+        
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-fade-up {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+        
+        .faq-accordion-item {
+          transition: all 0.3s ease;
+        }
+        
+        .faq-accordion-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
+        
+        .faq-accordion-content.open {
+          max-height: 1000px;
+        }
+        
+        .cookie-consent {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          background: white;
+          padding: 1rem 0;
+          box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+          z-index: 100;
+          transition: all 0.3s ease;
+        }
+        
+        .cookie-consent.hidden {
+          transform: translateY(100%);
+        }
+        
+        .dark .cookie-consent {
+          background: #1f2937;
+          box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        
+        .footer-heading {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #1f2937;
+          margin-bottom: 1rem;
+        }
+        
+        .dark .footer-heading {
+          color: #f3f4f6;
+        }
+        
+        .footer-link {
+          color: #4b5563;
+          margin-bottom: 0.5rem;
+          transition: color 0.2s ease;
+          display: inline-block;
+        }
+        
+        .footer-link:hover {
+          color: #3b82f6;
+        }
+        
+        .dark .footer-link {
+          color: #9ca3af;
+        }
+        
+        .dark .footer-link:hover {
+          color: #60a5fa;
+        }
+        
+        .footer-social-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: #f3f4f6;
+          color: #4b5563;
+          transition: all 0.3s ease;
+        }
+        
+        .footer-social-link:hover {
+          background: #3b82f6;
+          color: white;
+          transform: translateY(-3px);
+        }
+        
+        .dark .footer-social-link {
+          background: #374151;
+          color: #9ca3af;
+        }
+        
+        .dark .footer-social-link:hover {
+          background: #3b82f6;
+          color: white;
+        }
+        
+        .back-to-top {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: #3b82f6;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 90;
+          box-shadow: 0 4px 14px rgba(59, 130, 246, 0.5);
+          transition: all 0.3s ease;
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        
+        .back-to-top.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+          transform: translateY(-5px);
+          background: #2563eb;
+          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+      `}</style>
     </div>
   );
 };
