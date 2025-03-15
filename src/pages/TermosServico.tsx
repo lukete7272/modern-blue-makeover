@@ -78,7 +78,7 @@ const TermosServico = () => {
                   Atualizações e Melhorias
                 </h2>
                 <p>
-                  A I9 Appify está comprometida em melhorar continuamente seus serviços para proporcionar a melhor experiência possível. Periodicamente implementamos atualizações para aprimorar as funcionalidades, adicionar novos recursos ou otimizar o desempenho da plataforma, sempre com foco na satisfação dos nossos clientes.
+                  A I9 Appify está comprometida em melhorar continuamente seus serviços para proporcionar a melhor experiência possível. Periodicamente implementamos atualizações para aprimorar as funcionalidades, adicionar novos recursos ou otimizar o desempenho da plataforma, sempre com foco na satisfação dos nossos clientes. Quando houver mudanças significativas, você será informado com antecedência.
                 </p>
               </div>
 

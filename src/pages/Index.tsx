@@ -638,6 +638,38 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-6 md:mb-0">
+              <div className="text-xl font-bold text-primary mb-2">I9 Appify</div>
+              <p className="text-gray-600 dark:text-gray-400 text-sm max-w-xs">
+                Transformando o atendimento ao cliente com soluções inteligentes de WhatsApp Business.
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center md:items-end">
+              <div className="flex space-x-4 mb-4">
+                <a 
+                  href="https://www.instagram.com/i9_appify/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-6 h-6" />
+                </a>
+              </div>
+              
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
+                © {new Date().getFullYear()} I9 Appify. Todos os direitos reservados.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
     </div>
   );
 };
