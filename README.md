@@ -1,4 +1,5 @@
-# Welcome to your Lovable project
+
+# I9 Appify
 
 ## Project info
 
@@ -36,23 +37,32 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Deployment to Hostinger
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To deploy this project to Hostinger, follow these steps:
 
-**Use GitHub Codespaces**
+1. **Build the project:**
+   ```sh
+   npm run build
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+2. **Upload to Hostinger:**
+   - Log in to your Hostinger account
+   - Navigate to File Manager or use FTP to access your hosting
+   - Upload the contents of the `dist` folder to the public_html directory or your desired subdirectory
 
-## What technologies are used for this project?
+3. **Configure for React Router:**
+   - The project includes a `.htaccess` file in the `public` folder that will be copied to the `dist` folder during build
+   - This file helps with proper routing for a single-page application
+   - If you encounter 404 errors when navigating directly to routes, ensure this file is properly uploaded
 
-This project is built with .
+4. **Test your deployment:**
+   - Visit your domain to ensure everything is working correctly
+   - Test all navigation links and features
+
+## Technologies used in this project
+
+This project is built with:
 
 - Vite
 - TypeScript
@@ -60,10 +70,3 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/bd64306c-2d96-4149-9b53-cfc9fbdae9d0) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
