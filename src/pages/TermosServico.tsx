@@ -50,13 +50,6 @@ const TermosServico = () => {
               </div>
 
               <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Sua Conta</h2>
-                <p className="mb-4">
-                  Para usar alguns de nossos Serviços, você pode precisar criar uma conta. Você é responsável por manter a segurança de sua conta e senha. A I9 Appify não pode e não será responsável por qualquer perda ou dano resultante de sua falha em cumprir com os requisitos de segurança.
-                </p>
-              </div>
-
-              <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Privacidade e Proteção de Dados</h2>
                 <p className="mb-4">
                   Nossa <Link to="/politica-privacidade" className="text-primary hover:underline">Política de Privacidade</Link> explica como tratamos seus dados pessoais e protegemos sua privacidade quando você usa nossos Serviços. Ao utilizar nossos Serviços, você concorda que a I9 Appify pode usar esses dados de acordo com nossas políticas de privacidade.
@@ -75,17 +68,17 @@ const TermosServico = () => {
                   Ajustes são modificações não críticas no fluxo, conteúdo ou configurações do agente. Exemplos incluem: atualizar promoções, corrigir respostas automáticas, personalizar o tom de comunicação, modificar horários de funcionamento ou alterar menus interativos.
                 </p>
                 <p className="mb-4">
-                  Cada plano inclui um número específico de ajustes: Essential (2 ajustes, R$150/hora adicional), Completo (5 ajustes, R$150/hora) e PRO (8 ajustes, R$150/hora adicional). Os ajustes são entregues em até 72 horas.
+                  Cada plano inclui um número específico de ajustes: plano essencial (2 ajustes, R$150/hora adicional), Completo (5 ajustes, R$150/hora) e PRO (8 ajustes, R$150/hora adicional). Os ajustes são entregues em até 72 horas.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                   <AlertCircle className="w-6 h-6 mr-2 text-primary" />
-                  Modificações nos Serviços
+                  Atualizações e Melhorias
                 </h2>
                 <p>
-                  A I9 Appify está constantemente melhorando seus Serviços. Podemos adicionar ou remover funcionalidades ou recursos, e podemos suspender ou interromper um Serviço por completo.
+                  A I9 Appify está comprometida em melhorar continuamente seus serviços para proporcionar a melhor experiência possível. Periodicamente implementamos atualizações para aprimorar as funcionalidades, adicionar novos recursos ou otimizar o desempenho da plataforma, sempre com foco na satisfação dos nossos clientes.
                 </p>
               </div>
 
