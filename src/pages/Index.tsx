@@ -92,7 +92,7 @@ const appFeatures = [
 const galleryItems = [
   {
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
-    title: "Chatbot Personalizado",
+    title: "Agente de IA Personalizado",
     description: "Atendimento automatizado com personalidade da sua marca"
   },
   {
@@ -615,7 +615,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <section id="integrations" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
             Integrações Disponíveis
@@ -813,7 +813,7 @@ const Index = () => {
                 Soluções inteligentes para automatizar seu atendimento e otimizar seus processos.
               </p>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a href="#" className="footer-social-link" aria-label="Instagram">
+                <a href="https://www.instagram.com/i9_appify/" target="_blank" className="footer-social-link" aria-label="Instagram">
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>
