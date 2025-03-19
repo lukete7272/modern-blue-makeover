@@ -396,7 +396,7 @@ const Index = () => {
             </button>
             <Link 
               to="/sobre-nos"
-              className="text-xl font-medium text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition py-2 border-b border-gray-100 dark:border-gray-700"
+              className="text-xl font-medium text-center text-gray-800 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition py-2 border-b border-gray-100 dark:border-gray-700"
             >
               Quem Somos
             </Link>
@@ -1218,3 +1218,4 @@ const Index = () => {
 };
 
 export default Index;
+
